@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "title": "Suma a două numere",
+  "timeLimit": 2000,
+  "testsCount": 5,
+  "statement": "Se citesc două numere întregi a și b. Să se afișeze suma lor.\n\n**Date de intrare:**\nPe prima linie se află două numere întregi separate prin spațiu.\n\n**Date de ieșire:**\nUn singur număr întreg - suma celor două numere.\n\n**Exemplu:**\n- Intrare: 2 3\n- Ieșire: 5"
+}
