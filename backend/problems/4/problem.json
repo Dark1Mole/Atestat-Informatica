@@ -1,0 +1,12 @@
+{
+  "id": 4,
+  "title": "Inversare șir",
+  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul inversat (oglindit).",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul inversat",
+  "example": {
+    "input": "bac",
+    "output": "cab"
+  },
+  "difficulty": "easy"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 26,
+  "title": "Inserare caracter",
+  "description": "Se citește un șir de caractere, un caracter c și o poziție p.\n\nSă se afișeze șirul în care caracterul c a fost inserat la poziția p (indexare de la 0).",
+  "inputFormat": "Pe prima linie șirul s\nPe a doua linie caracterul c\nPe a treia linie poziția p",
+  "outputFormat": "Șirul cu caracterul inserat",
+  "example": {
+    "input": "abc\nx\n1",
+    "output": "axbc"
+  },
+  "difficulty": "easy"
+}

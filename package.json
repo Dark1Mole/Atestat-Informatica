@@ -1,0 +1,16 @@
+{
+  "name": "atestat-mini-pbinfo",
+  "version": "1.0.0",
+  "description": "Mini online judge pentru atestat - C++ only, probleme locale",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "build": "npm run build --prefix client",
+    "dev:client": "npm run dev --prefix client"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

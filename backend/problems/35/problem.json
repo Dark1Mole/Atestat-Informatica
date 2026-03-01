@@ -1,0 +1,12 @@
+{
+  "id": 35,
+  "title": "Sortare caractere",
+  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se afișeze șirul cu caracterele sortate alfabetic.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul sortat",
+  "example": {
+    "input": "bac",
+    "output": "abc"
+  },
+  "difficulty": "easy"
+}

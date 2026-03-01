@@ -1,0 +1,12 @@
+{
+  "id": 3,
+  "title": "Numărare consoane",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de consoane din șir.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Un număr natural reprezentând numărul de consoane",
+  "example": {
+    "input": "programare",
+    "output": "6"
+  },
+  "difficulty": "easy"
+}

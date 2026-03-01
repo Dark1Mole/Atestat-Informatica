@@ -1,0 +1,12 @@
+{
+  "id": 36,
+  "title": "Anagramă",
+  "description": "Se citesc două șiruri de caractere formate doar din litere mici.\n\nSă se verifice dacă cele două șiruri sunt anagrame (conțin aceleași caractere, posibil în altă ordine).\n\nDacă sunt anagrame, se afișează 'DA', altfel 'NU'.",
+  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
+  "outputFormat": "'DA' sau 'NU'",
+  "example": {
+    "input": "listen\nsilent",
+    "output": "DA"
+  },
+  "difficulty": "medium"
+}

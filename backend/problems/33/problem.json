@@ -1,0 +1,12 @@
+{
+  "id": 33,
+  "title": "Cel mai scurt cuvânt",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze cel mai scurt cuvânt din propoziție.\n\nDacă există mai multe cuvinte de lungime minimă, se afișează primul.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Cel mai scurt cuvânt",
+  "example": {
+    "input": "informatica e frumoasa",
+    "output": "e"
+  },
+  "difficulty": "medium"
+}

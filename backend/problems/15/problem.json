@@ -1,0 +1,12 @@
+{
+  "id": 15,
+  "title": "Ștergere vocale",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze șirul din care au fost eliminate toate vocalele.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul fără vocale",
+  "example": {
+    "input": "informatica",
+    "output": "nfrmtc"
+  },
+  "difficulty": "easy"
+}

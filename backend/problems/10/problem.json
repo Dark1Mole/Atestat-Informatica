@@ -1,0 +1,12 @@
+{
+  "id": 10,
+  "title": "Cifre în șir",
+  "description": "Se citește un șir de caractere format din litere și cifre.\n\nSă se afișeze numărul de cifre din șir.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Numărul de cifre din șir",
+  "example": {
+    "input": "bac2025info",
+    "output": "4"
+  },
+  "difficulty": "easy"
+}

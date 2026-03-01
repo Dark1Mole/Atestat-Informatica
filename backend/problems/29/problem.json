@@ -1,0 +1,12 @@
+{
+  "id": 29,
+  "title": "Comparare șiruri",
+  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze:\n- 0 dacă șirurile sunt egale\n- -1 dacă primul șir este mai mic lexicografic\n- 1 dacă primul șir este mai mare lexicografic",
+  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
+  "outputFormat": "0, -1 sau 1",
+  "example": {
+    "input": "abc\nabd",
+    "output": "-1"
+  },
+  "difficulty": "easy"
+}

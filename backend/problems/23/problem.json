@@ -1,0 +1,12 @@
+{
+  "id": 23,
+  "title": "Rotire la stânga",
+  "description": "Se citește un șir de caractere și un număr natural k.\n\nSă se afișeze șirul rotit la stânga cu k poziții.\n\nDacă k este mai mare decât lungimea șirului, se rotește cu k mod lungime poziții.",
+  "inputFormat": "Pe prima linie șirul s\nPe a doua linie numărul k",
+  "outputFormat": "Șirul rotit la stânga",
+  "example": {
+    "input": "abcdef\n2",
+    "output": "cdefab"
+  },
+  "difficulty": "easy"
+}

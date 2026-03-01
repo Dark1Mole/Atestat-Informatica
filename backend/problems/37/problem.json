@@ -1,0 +1,12 @@
+{
+  "id": 37,
+  "title": "Comprimare șir (RLE)",
+  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se afișeze șirul comprimat folosind metoda Run-Length Encoding: fiecare secvență de caractere identice consecutive se înlocuiește cu caracterul urmat de numărul de apariții.\n\nDacă un caracter apare o singură dată, nu se mai scrie numărul.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul comprimat",
+  "example": {
+    "input": "aaabbc",
+    "output": "a3b2c"
+  },
+  "difficulty": "medium"
+}

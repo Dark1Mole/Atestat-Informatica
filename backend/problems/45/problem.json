@@ -1,0 +1,12 @@
+{
+  "id": 45,
+  "title": "Inversare fiecare cuvânt",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze propoziția în care fiecare cuvânt a fost inversat, dar ordinea cuvintelor rămâne aceeași.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Propoziția cu cuvinte inversate",
+  "example": {
+    "input": "bac la informatica",
+    "output": "cab al acitamrofni"
+  },
+  "difficulty": "medium"
+}

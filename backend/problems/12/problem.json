@@ -1,0 +1,12 @@
+{
+  "id": 12,
+  "title": "Caracter maxim",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze caracterul cu codul ASCII cel mai mare din șir.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Caracterul cu codul ASCII maxim",
+  "example": {
+    "input": "informatica",
+    "output": "t"
+  },
+  "difficulty": "easy"
+}

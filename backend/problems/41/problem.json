@@ -1,0 +1,12 @@
+{
+  "id": 41,
+  "title": "Decriptare Caesar",
+  "description": "Se citește un șir de caractere criptat folosind cifrul Caesar și un număr k.\n\nSă se afișeze șirul decriptat (fiecare literă se înlocuiește cu litera aflată la k poziții înainte în alfabet).",
+  "inputFormat": "Pe prima linie șirul criptat s (format doar din litere mici)\nPe a doua linie numărul k (0 ≤ k ≤ 25)",
+  "outputFormat": "Șirul decriptat",
+  "example": {
+    "input": "def\n3",
+    "output": "abc"
+  },
+  "difficulty": "medium"
+}

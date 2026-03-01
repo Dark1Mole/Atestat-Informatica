@@ -1,0 +1,12 @@
+{
+  "id": 19,
+  "title": "Cel mai frecvent caracter",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze caracterul care apare de cele mai multe ori.\n\nDacă există mai multe caractere cu frecvență maximă, se afișează primul în ordine alfabetică.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Caracterul cel mai frecvent",
+  "example": {
+    "input": "abracadabra",
+    "output": "a"
+  },
+  "difficulty": "medium"
+}

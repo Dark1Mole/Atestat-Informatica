@@ -1,0 +1,12 @@
+{
+  "id": 27,
+  "title": "Ștergere caracter de pe poziție",
+  "description": "Se citește un șir de caractere și o poziție p.\n\nSă se afișeze șirul din care a fost șters caracterul de pe poziția p (indexare de la 0).",
+  "inputFormat": "Pe prima linie șirul s\nPe a doua linie poziția p",
+  "outputFormat": "Șirul fără caracterul de pe poziția p",
+  "example": {
+    "input": "abcdef\n2",
+    "output": "abdef"
+  },
+  "difficulty": "easy"
+}

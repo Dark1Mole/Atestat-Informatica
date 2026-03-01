@@ -1,0 +1,12 @@
+{
+  "id": 44,
+  "title": "Cuvinte palindrom",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze numărul de cuvinte care sunt palindrom.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Numărul de cuvinte palindrom",
+  "example": {
+    "input": "ana are apa si ana",
+    "output": "3"
+  },
+  "difficulty": "medium"
+}

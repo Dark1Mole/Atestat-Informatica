@@ -1,0 +1,12 @@
+{
+  "id": 42,
+  "title": "Eliminare duplicate consecutive",
+  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul din care au fost eliminate caracterele consecutive duplicate (se păstrează doar o apariție).",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul fără duplicate consecutive",
+  "example": {
+    "input": "aabbccaabb",
+    "output": "abcab"
+  },
+  "difficulty": "easy"
+}

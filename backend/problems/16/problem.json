@@ -1,0 +1,12 @@
+{
+  "id": 16,
+  "title": "Ștergere consoane",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze șirul din care au fost eliminate toate consoanele.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul fără consoane",
+  "example": {
+    "input": "informatica",
+    "output": "ioaia"
+  },
+  "difficulty": "easy"
+}

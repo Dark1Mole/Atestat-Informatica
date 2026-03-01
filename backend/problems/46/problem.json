@@ -1,0 +1,12 @@
+{
+  "id": 46,
+  "title": "Prima literă mare",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații (toate literele sunt mici).\n\nSă se afișeze propoziția în care prima literă a fiecărui cuvânt este transformată în majusculă.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Propoziția cu prima literă mare la fiecare cuvânt",
+  "example": {
+    "input": "examen la bacalaureat",
+    "output": "Examen La Bacalaureat"
+  },
+  "difficulty": "easy"
+}

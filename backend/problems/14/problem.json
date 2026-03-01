@@ -1,0 +1,12 @@
+{
+  "id": 14,
+  "title": "Frecvența unui caracter",
+  "description": "Se citește un șir de caractere și un caracter c.\n\nSă se afișeze de câte ori apare caracterul c în șir.",
+  "inputFormat": "Pe prima linie un șir de caractere s (1 ≤ |s| ≤ 1000)\nPe a doua linie caracterul c",
+  "outputFormat": "Numărul de apariții ale caracterului c",
+  "example": {
+    "input": "informatica\na",
+    "output": "3"
+  },
+  "difficulty": "easy"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 31,
+  "title": "Numărare cuvinte",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze numărul de cuvinte din propoziție.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Numărul de cuvinte",
+  "example": {
+    "input": "informatica este frumoasa",
+    "output": "3"
+  },
+  "difficulty": "easy"
+}

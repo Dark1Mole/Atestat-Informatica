@@ -1,0 +1,12 @@
+{
+  "id": 22,
+  "title": "Sufix comun",
+  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze cel mai lung sufix comun al celor două șiruri.\n\nDacă nu există sufix comun, se afișează un șir vid.",
+  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
+  "outputFormat": "Sufixul comun sau șirul vid",
+  "example": {
+    "input": "programare\ninformare",
+    "output": "are"
+  },
+  "difficulty": "medium"
+}

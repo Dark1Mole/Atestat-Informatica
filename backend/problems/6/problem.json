@@ -1,0 +1,12 @@
+{
+  "id": 6,
+  "title": "Majuscule în minuscule",
+  "description": "Se citește un șir de caractere format doar din litere mari și mici ale alfabetului englez.\n\nSă se afișeze șirul în care toate literele mari au fost transformate în litere mici.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Șirul transformat în litere mici",
+  "example": {
+    "input": "InFoRmAtIcA",
+    "output": "informatica"
+  },
+  "difficulty": "easy"
+}

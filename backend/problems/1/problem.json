@@ -1,14 +1,13 @@
 {
   "id": 1,
-  "title": "Suma a două numere",
-  "category": "Introducere",
-  "timeLimit": 2000,
+  "title": "Lungimea șirului",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
   "testsCount": 5,
-  "statement": "Se citesc două numere întregi \\(a\\) și \\(b\\). Să se afișeze **suma** lor.\n\n**Date de intrare**\n\nPe prima linie se află două numere întregi separate prin spațiu.\n\n**Date de ieșire**\n\nUn singur număr întreg – suma celor două numere.\n\n**Exemplu**\n\n- Intrare: `2 3`\n- Ieșire: `5`",
+  "statement": "Se citește un cuvânt format doar din litere mici ale alfabetului englez.\n\n**Cerință:** Afișează lungimea cuvântului.\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\n```\n\n**Ieșire:**\n```\n11\n```",
   "tips": [
-    "Citește două numere întregi de la tastatură folosind `cin >> a >> b;`.",
-    "Calculează suma în altă variabilă sau direct în `cout` (`cout << a + b;`).",
-    "Afișează **doar** numărul, fără text explicativ sau mesaje suplimentare."
+    "Folosește funcția `strlen(s)` din `<cstring>`",
+    "Parcurge șirul până la caracterul `'\\0'`",
+    "Declară șirul suficient de mare: `char s[1001];`"
   ]
 }
-

@@ -1,0 +1,12 @@
+{
+  "id": 20,
+  "title": "Concatenare inversă",
+  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze concatenarea inversului primului șir cu inversul celui de-al doilea șir.",
+  "inputFormat": "Pe prima linie șirul s1 (1 ≤ |s1| ≤ 500)\nPe a doua linie șirul s2 (1 ≤ |s2| ≤ 500)",
+  "outputFormat": "Concatenarea inversurilor",
+  "example": {
+    "input": "abc\nxyz",
+    "output": "cbazyx"
+  },
+  "difficulty": "easy"
+}

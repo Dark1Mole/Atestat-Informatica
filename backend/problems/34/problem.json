@@ -1,0 +1,12 @@
+{
+  "id": 34,
+  "title": "Inversare cuvinte",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze propoziția cu ordinea cuvintelor inversată.",
+  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Propoziția cu cuvinte inversate",
+  "example": {
+    "input": "bac la informatica",
+    "output": "informatica la bac"
+  },
+  "difficulty": "medium"
+}

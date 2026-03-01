@@ -1,0 +1,12 @@
+{
+  "id": 49,
+  "title": "Cel mai lung subșir de vocale",
+  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se afișeze lungimea celui mai lung subșir format doar din vocale consecutive.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Lungimea celui mai lung subșir de vocale",
+  "example": {
+    "input": "baaeioubc",
+    "output": "5"
+  },
+  "difficulty": "medium"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "title": "Numărare vocale",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de vocale (a, e, i, o, u) din șir.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Un număr natural reprezentând numărul de vocale",
+  "example": {
+    "input": "informatica",
+    "output": "5"
+  },
+  "difficulty": "easy"
+}

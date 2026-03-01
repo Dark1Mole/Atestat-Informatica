@@ -1,0 +1,12 @@
+{
+  "id": 48,
+  "title": "Litere alternante",
+  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se verifice dacă vocalele și consoanele alternează în șir.\n\nSe afișează 'DA' dacă alternează, altfel 'NU'.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "'DA' sau 'NU'",
+  "example": {
+    "input": "abate",
+    "output": "DA"
+  },
+  "difficulty": "medium"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 28,
+  "title": "Înlocuire caracter",
+  "description": "Se citește un șir de caractere și două caractere c1 și c2.\n\nSă se afișeze șirul în care toate aparițiile caracterului c1 au fost înlocuite cu caracterul c2.",
+  "inputFormat": "Pe prima linie șirul s\nPe a doua linie caracterele c1 și c2 separate prin spațiu",
+  "outputFormat": "Șirul cu caracterele înlocuite",
+  "example": {
+    "input": "banana\na o",
+    "output": "bonono"
+  },
+  "difficulty": "easy"
+}

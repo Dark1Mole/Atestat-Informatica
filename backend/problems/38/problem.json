@@ -1,0 +1,12 @@
+{
+  "id": 38,
+  "title": "Intercalare șiruri",
+  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze șirul obținut prin intercalarea caracterelor celor două șiruri.\n\nDacă un șir este mai lung, caracterele rămase se adaugă la final.",
+  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
+  "outputFormat": "Șirul intercalat",
+  "example": {
+    "input": "abc\n123",
+    "output": "a1b2c3"
+  },
+  "difficulty": "easy"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 17,
+  "title": "Duplicare caractere",
+  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul în care fiecare caracter apare de două ori.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 500)",
+  "outputFormat": "Șirul cu caractere duplicate",
+  "example": {
+    "input": "abc",
+    "output": "aabbcc"
+  },
+  "difficulty": "easy"
+}

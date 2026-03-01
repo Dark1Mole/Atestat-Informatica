@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "title": "Verificare palindrom",
+  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se verifice dacă șirul este palindrom (se citește la fel de la stânga la dreapta și invers).\n\nDacă este palindrom, se afișează 'DA', altfel 'NU'.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "'DA' sau 'NU'",
+  "example": {
+    "input": "aba",
+    "output": "DA"
+  },
+  "difficulty": "easy"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 21,
+  "title": "Prefix comun",
+  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze cel mai lung prefix comun al celor două șiruri.\n\nDacă nu există prefix comun, se afișează un șir vid.",
+  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
+  "outputFormat": "Prefixul comun sau șirul vid",
+  "example": {
+    "input": "informatica\ninformare",
+    "output": "inform"
+  },
+  "difficulty": "medium"
+}

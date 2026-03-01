@@ -1,0 +1,12 @@
+{
+  "id": 18,
+  "title": "Caractere distincte",
+  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de caractere distincte din șir.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "Numărul de caractere distincte",
+  "example": {
+    "input": "informatica",
+    "output": "8"
+  },
+  "difficulty": "medium"
+}

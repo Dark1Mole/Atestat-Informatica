@@ -1,0 +1,12 @@
+{
+  "id": 43,
+  "title": "Cuvinte cu lungime dată",
+  "description": "Se citește o propoziție formată din cuvinte separate prin spații și un număr n.\n\nSă se afișeze toate cuvintele care au lungimea egală cu n, separate prin spații.",
+  "inputFormat": "Pe prima linie propoziția\nPe a doua linie numărul n",
+  "outputFormat": "Cuvintele cu lungimea n, separate prin spații",
+  "example": {
+    "input": "bac este greu dar nu imposibil\n3",
+    "output": "bac dar"
+  },
+  "difficulty": "medium"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 39,
+  "title": "Șir semi-oglindit",
+  "description": "Se citește un șir de caractere.\n\nUn șir este semi-oglindit dacă prima jumătate este egală cu oglinditul celei de-a doua jumătăți.\n\nDacă lungimea este impară, caracterul din mijloc nu se ia în considerare.\n\nSe afișează 'DA' dacă șirul este semi-oglindit, altfel 'NU'.",
+  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
+  "outputFormat": "'DA' sau 'NU'",
+  "example": {
+    "input": "abccba",
+    "output": "DA"
+  },
+  "difficulty": "medium"
+}
