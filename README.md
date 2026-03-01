@@ -46,6 +46,22 @@ Deschide http://localhost:3000 în browser.
 4. Factorial  
 5. Număr prim  
 
+## Cum sunt testate soluțiile
+
+1. Codul C++ trimis este salvat într-un fișier temporar.
+2. Este compilat cu `g++ -std=c++17 -O2`.  
+   - Dacă apare o eroare, verdictul este **Compile Error**, cu mesaj detaliat și un rezumat în limbaj natural.
+3. Pentru fiecare test `i`:
+   - programul este rulat cu inputul din `tests/i.in`, cu limită de timp (ex: `2000 ms`);
+   - output-ul produs este citit și normalizat (se ignoră spațiile și diferențele de `\r\n`);
+   - este comparat cu `tests/i.out`.
+4. Primul test care eșuează oprește evaluarea:
+   - **Wrong Answer** – output diferit față de așteptat;
+   - **Time Limit Exceeded** – programul nu termină în timp util.
+5. Dacă toate testele sunt trecute, verdictul este **Accepted**.
+
+Toate trimiterile sunt logate în `backend/submissions.log` (timp, id problemă, verdict, teste trecute).
+
 ## Adăugare problemă nouă
 
 1. Creează folder `backend/problems/N` (N = id)
@@ -56,10 +72,24 @@ Deschide http://localhost:3000 în browser.
   "title": "Titlul problemei",
   "timeLimit": 2000,
   "testsCount": 5,
-  "statement": "Enunțul..."
+  "statement": "Enunțul în format Markdown...",
+  "category": "Introducere / Cicluri / ...",
+  "tips": [
+    "Hint 1 în format Markdown",
+    "Hint 2..."
+  ]
 }
 ```
 3. Adaugă `tests/1.in`, `tests/1.out`, etc.
+
+### Markdown pentru enunț
+
+Enunțurile suportă Markdown simplu:
+
+- `**bold**` pentru evidențiere;
+- liste cu `-` sau `1.` pentru enumerări;
+- inline code cu `` `cod` `` și blocuri de cod cu ``` ```cpp ... ```;  
+- formule LaTeX simple între `\\( ... \\)` (opțional).
 
 ## Verdicturi
 
