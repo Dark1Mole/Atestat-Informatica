@@ -1,12 +1,13 @@
 {
   "id": 48,
-  "title": "Litere alternante",
-  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se verifice dacă vocalele și consoanele alternează în șir.\n\nSe afișează 'DA' dacă alternează, altfel 'NU'.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "'DA' sau 'NU'",
-  "example": {
-    "input": "abate",
-    "output": "DA"
-  },
-  "difficulty": "medium"
+  "title": "Comprimare șir (RLE)",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Run-Length Encoding (RLE)** este o tehnică simplă de comprimare a datelor care înlocuiește secvențe consecutive de caractere identice cu caracterul urmat de numărul de repetări.\n\n**Cerință:** Se dă un cuvânt format din litere mici ale alfabetului englez. Afișează șirul comprimat folosind RLE: fiecare caracter urmat de numărul său de apariții consecutive.\n\n### Exemplu\n\n**Intrare:**\n```\naaabbbcc\n```\n\n**Ieșire:**\n```\na3b3c2\n```",
+  "tips": [
+    "Parcurge șirul și numără aparițiile consecutive ale fiecărui caracter",
+    "Când caracterul se schimbă, afișează caracterul anterior și contorul",
+    "Nu uita să afișezi și ultimul grup de caractere"
+  ]
 }

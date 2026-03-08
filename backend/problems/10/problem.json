@@ -1,12 +1,13 @@
 {
   "id": 10,
-  "title": "Cifre în șir",
-  "description": "Se citește un șir de caractere format din litere și cifre.\n\nSă se afișeze numărul de cifre din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Numărul de cifre din șir",
-  "example": {
-    "input": "bac2025info",
-    "output": "4"
-  },
-  "difficulty": "easy"
+  "title": "Inversare cuvinte cu vocală",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Un șir cu maximum 255 de caractere conține cuvinte separate prin câte un spațiu, formate numai din litere mici ale alfabetului englez.\n\n**Cerință:** Afișează șirul modificat, inversând prin oglindire doar cuvintele care încep cu vocală. Se consideră vocale literele din mulțimea {a, e, i, o, u}.\n\n### Exemplu\n\n**Intrare:**\n```\nmaine este proba la informatica\n```\n\n**Ieșire:**\n```\nmaine etse proba la acitamrofni\n```",
+  "tips": [
+    "Identifică cuvintele care încep cu vocală",
+    "Inversează doar acele cuvinte",
+    "Păstrează spațiile dintre cuvinte"
+  ]
 }

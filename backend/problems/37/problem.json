@@ -1,12 +1,13 @@
 {
   "id": 37,
-  "title": "Comprimare șir (RLE)",
-  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se afișeze șirul comprimat folosind metoda Run-Length Encoding: fiecare secvență de caractere identice consecutive se înlocuiește cu caracterul urmat de numărul de apariții.\n\nDacă un caracter apare o singură dată, nu se mai scrie numărul.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul comprimat",
-  "example": {
-    "input": "aaabbc",
-    "output": "a3b2c"
-  },
-  "difficulty": "medium"
+  "title": "Oglindirea cuvântului",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dă un cuvânt format din cel mult 200 de litere mici ale alfabetului englez. Afișează oglindirea cuvântului (cuvântul scris invers).\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\n```\n\n**Ieșire:**\n```\nacitamrofni\n```",
+  "tips": [
+    "Parcurge șirul de la sfârșit către început",
+    "Construiește un nou șir cu caracterele în ordine inversă",
+    "Poți folosi tehnica cu doi indici care se înlocuiesc"
+  ]
 }

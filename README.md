@@ -40,16 +40,16 @@ Deschide http://localhost:3000 în browser.
 
 ## Probleme incluse (exemple)
 
-1. Suma a două numere  
-2. Verificare număr par  
-3. Maximul a trei numere  
-4. Factorial  
-5. Număr prim  
+1. Suma a două numere
+2. Verificare număr par
+3. Maximul a trei numere
+4. Factorial
+5. Număr prim
 
 ## Cum sunt testate soluțiile
 
 1. Codul C++ trimis este salvat într-un fișier temporar.
-2. Este compilat cu `g++ -std=c++17 -O2`.  
+2. Este compilat cu `g++ -std=c++17 -O2`.
    - Dacă apare o eroare, verdictul este **Compile Error**, cu mesaj detaliat și un rezumat în limbaj natural.
 3. Pentru fiecare test `i`:
    - programul este rulat cu inputul din `tests/i.in`, cu limită de timp (ex: `2000 ms`);
@@ -66,13 +66,14 @@ Toate trimiterile sunt logate în `backend/submissions.log` (timp, id problemă,
 
 1. Creează folder `backend/problems/N` (N = id)
 2. Adaugă `problem.json`:
+
 ```json
 {
   "id": N,
   "title": "Titlul problemei",
   "timeLimit": 2000,
   "testsCount": 5,
-  "statement": "Enunțul în format Markdown...",
+  "description": "Enunțul în format Markdown...",
   "category": "Introducere / Cicluri / ...",
   "tips": [
     "Hint 1 în format Markdown",
@@ -80,6 +81,7 @@ Toate trimiterile sunt logate în `backend/submissions.log` (timp, id problemă,
   ]
 }
 ```
+
 3. Adaugă `tests/1.in`, `tests/1.out`, etc.
 
 ### Markdown pentru enunț
@@ -88,7 +90,7 @@ Enunțurile suportă Markdown simplu:
 
 - `**bold**` pentru evidențiere;
 - liste cu `-` sau `1.` pentru enumerări;
-- inline code cu `` `cod` `` și blocuri de cod cu ``` ```cpp ... ```;  
+- inline code cu `` `cod` `` și blocuri de cod cu ` `cpp ... ```;
 - formule LaTeX simple între `\\( ... \\)` (opțional).
 
 ## Verdicturi

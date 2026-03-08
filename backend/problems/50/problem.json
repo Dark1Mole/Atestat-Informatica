@@ -1,12 +1,13 @@
 {
   "id": 50,
-  "title": "Caractere pe poziții pare",
-  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul format doar din caracterele aflate pe poziții pare (indexare de la 0).",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul cu caractere de pe poziții pare",
-  "example": {
-    "input": "abcdefgh",
-    "output": "aceg"
-  },
-  "difficulty": "easy"
+  "title": "Criptare Caesar",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Criptarea Caesar** este o metodă simplă de cifrare în care fiecare literă din textul original este înlocuită cu o literă aflată la un anumit număr de poziții mai departe în alfabet.\n\n**Cerință:** Se dă un cuvânt format din litere mici ale alfabetului englez și un număr `k` (cheia de criptare). Afișează cuvântul criptat folosind cifrul Caesar cu deplasare `k`. Când depășești litera `z`, continui de la `a`.\n\n### Exemplu\n\n**Intrare:**\n```\nabc\n3\n```\n\n**Ieșire:**\n```\ndef\n```",
+  "tips": [
+    "Pentru fiecare caracter, calculează noua poziție: (poziție + k) mod 26",
+    "Folosește codurile ASCII pentru conversie",
+    "Atenție la wrap-around: după 'z' vine 'a'"
+  ]
 }

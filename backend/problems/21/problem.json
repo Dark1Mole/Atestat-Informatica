@@ -1,12 +1,13 @@
 {
   "id": 21,
-  "title": "Prefix comun",
-  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze cel mai lung prefix comun al celor două șiruri.\n\nDacă nu există prefix comun, se afișează un șir vid.",
-  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
-  "outputFormat": "Prefixul comun sau șirul vid",
-  "example": {
-    "input": "informatica\ninformare",
-    "output": "inform"
-  },
-  "difficulty": "medium"
+  "title": "Cifra cea mai frecventă",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir de cel mult 50 de caractere (litere mici și mari ale alfabetului englez, cifre, puncte, virgule și spații).\n\n**Cerință:** Determină cifra care apare de cele mai multe ori în șirul citit și afișează-o. Dacă șirul conține mai multe cifre cu număr maxim de apariții, se va afișa cea mai mică dintre acestea. Dacă șirul nu conține nicio cifră, se va afișa mesajul `NU`.\n\n### Exemplu\n\n**Intrare:**\n```\nAna are 11 mere si 22 pere\n```\n\n**Ieșire:**\n```\n1\n```",
+  "tips": [
+    "Folosește un vector de frecvență pentru cele 10 cifre (0-9)",
+    "Parcurge vectorul pentru a găsi maximul",
+    "În caz de egalitate, cifra mai mică are prioritate"
+  ]
 }

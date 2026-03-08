@@ -224,8 +224,117 @@ async function runJudge(problemId, code) {
     try {
       if (fs.existsSync(sourcePath)) fs.unlinkSync(sourcePath);
       if (fs.existsSync(exePath)) fs.unlinkSync(exePath);
-    } catch (_) {}
+    } catch (_) { }
   }
 }
 
-module.exports = { runJudge };
+// Rulează cod cu input custom (pentru testare manuală)
+async function runWithCustomInput(code, input) {
+  const codeStr = String(code ?? '');
+  const codeBytes = Buffer.byteLength(codeStr, 'utf8');
+
+  if (!codeStr.trim()) {
+    return {
+      success: false,
+      output: '',
+      error: 'Codul trimis este gol.'
+    };
+  }
+
+  if (codeBytes > MAX_CODE_BYTES) {
+    return {
+      success: false,
+      output: '',
+      error: `Codul este prea mare (${codeBytes} bytes).`
+    };
+  }
+
+  if (hasBannedInclude(codeStr)) {
+    return {
+      success: false,
+      output: '',
+      error: 'Ai folosit un header care nu este permis.'
+    };
+  }
+
+  const tempId = `run_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+  const sourcePath = path.join(TEMP_DIR, `${tempId}.cpp`);
+  const exeName = process.platform === 'win32' ? `${tempId}.exe` : tempId;
+  const exePath = path.join(TEMP_DIR, exeName);
+
+  try {
+    fs.writeFileSync(sourcePath, codeStr, 'utf8');
+
+    // Compilare
+    try {
+      execSync(`g++ -o "${exePath}" "${sourcePath}" -std=c++17 -O2`, {
+        timeout: 10000,
+        encoding: 'utf8'
+      });
+    } catch (compileErr) {
+      const stderr = compileErr.stderr || compileErr.message || '';
+      return {
+        success: false,
+        output: '',
+        error: 'Compile Error: ' + stderr.slice(0, 500),
+        friendlyError: summarizeCompileError(stderr)
+      };
+    }
+
+    // Rulare cu input custom
+    const result = await new Promise((resolve, reject) => {
+      const proc = spawn(exePath, [], {
+        cwd: TEMP_DIR,
+        stdio: ['pipe', 'pipe', 'pipe']
+      });
+
+      let stdout = '';
+      let stderr = '';
+      let killed = false;
+
+      const timer = setTimeout(() => {
+        killed = true;
+        proc.kill('SIGKILL');
+      }, 5000); // 5 secunde timeout
+
+      proc.stdout.on('data', chunk => {
+        if (stdout.length < MAX_OUTPUT_CHARS) {
+          stdout += chunk.toString();
+        }
+      });
+
+      proc.stderr.on('data', chunk => {
+        stderr += chunk.toString().slice(0, 500);
+      });
+
+      proc.on('error', err => {
+        clearTimeout(timer);
+        reject(err);
+      });
+
+      proc.on('close', exitCode => {
+        clearTimeout(timer);
+        if (killed) {
+          resolve({ success: false, output: stdout, error: 'Time Limit Exceeded (5s)' });
+        } else if (exitCode !== 0) {
+          resolve({ success: false, output: stdout, error: 'Runtime Error: ' + stderr });
+        } else {
+          resolve({ success: true, output: stdout, error: null });
+        }
+      });
+
+      proc.stdin.write(String(input ?? ''));
+      proc.stdin.end();
+    });
+
+    return result;
+
+  } finally {
+    try {
+      if (fs.existsSync(sourcePath)) fs.unlinkSync(sourcePath);
+      if (fs.existsSync(exePath)) fs.unlinkSync(exePath);
+    } catch (_) { }
+  }
+}
+
+module.exports = { runJudge, runWithCustomInput };

@@ -1,12 +1,13 @@
 {
   "id": 12,
-  "title": "Caracter maxim",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze caracterul cu codul ASCII cel mai mare din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Caracterul cu codul ASCII maxim",
-  "example": {
-    "input": "informatica",
-    "output": "t"
-  },
-  "difficulty": "easy"
+  "title": "Afișare vocale",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir de cel mult 40 de caractere, format doar din litere mici ale alfabetului englez.\n\n**Cerință:** Afișează pe o singură linie toate vocalele ce apar în șirul citit. Vocalele vor fi afișate în ordinea apariției lor în șir, separate prin câte un spațiu. Se consideră vocale literele: a, e, i, o, u. Dacă șirul citit nu conține nicio vocală, se va afișa mesajul `fara vocale`.\n\n### Exemplu\n\n**Intrare:**\n```\ncalculator\n```\n\n**Ieșire:**\n```\na u a o\n```",
+  "tips": [
+    "Parcurge șirul și verifică dacă fiecare caracter este vocală",
+    "Adaugă vocalele găsite într-un șir rezultat",
+    "Verifică dacă s-a găsit cel puțin o vocală"
+  ]
 }

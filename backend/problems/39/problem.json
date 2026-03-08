@@ -1,12 +1,13 @@
 {
   "id": 39,
-  "title": "Șir semi-oglindit",
-  "description": "Se citește un șir de caractere.\n\nUn șir este semi-oglindit dacă prima jumătate este egală cu oglinditul celei de-a doua jumătăți.\n\nDacă lungimea este impară, caracterul din mijloc nu se ia în considerare.\n\nSe afișează 'DA' dacă șirul este semi-oglindit, altfel 'NU'.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "'DA' sau 'NU'",
-  "example": {
-    "input": "abccba",
-    "output": "DA"
-  },
-  "difficulty": "medium"
+  "title": "Cel mai lung cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dă o propoziție formată din mai multe cuvinte separate prin câte un spațiu. Cuvintele sunt formate doar din litere mici ale alfabetului englez. Afișează cel mai lung cuvânt din propoziție. Dacă există mai multe cuvinte de lungime maximă, afișează primul dintre ele.\n\n### Exemplu\n\n**Intrare:**\n```\neu invat informatica la liceu\n```\n\n**Ieșire:**\n```\ninformatica\n```",
+  "tips": [
+    "Extrage cuvintele din propoziție folosind separatorul spațiu",
+    "Compară lungimea fiecărui cuvânt cu lungimea maximă găsită",
+    "Reține cuvântul cu lungimea maximă"
+  ]
 }

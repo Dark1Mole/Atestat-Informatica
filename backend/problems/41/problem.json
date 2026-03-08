@@ -1,12 +1,13 @@
 {
   "id": 41,
-  "title": "Decriptare Caesar",
-  "description": "Se citește un șir de caractere criptat folosind cifrul Caesar și un număr k.\n\nSă se afișeze șirul decriptat (fiecare literă se înlocuiește cu litera aflată la k poziții înainte în alfabet).",
-  "inputFormat": "Pe prima linie șirul criptat s (format doar din litere mici)\nPe a doua linie numărul k (0 ≤ k ≤ 25)",
-  "outputFormat": "Șirul decriptat",
-  "example": {
-    "input": "def\n3",
-    "output": "abc"
-  },
-  "difficulty": "medium"
+  "title": "Sortare cuvinte după lungime",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dă o propoziție formată din mai multe cuvinte separate prin câte un spațiu. Cuvintele sunt formate doar din litere mici ale alfabetului englez. Afișează cuvintele sortate crescător după lungime, separate prin câte un spațiu. Dacă două cuvinte au aceeași lungime, se păstrează ordinea în care apar în propoziție.\n\n### Exemplu\n\n**Intrare:**\n```\neu invat informatica la liceu\n```\n\n**Ieșire:**\n```\neu la invat liceu informatica\n```",
+  "tips": [
+    "Extrage cuvintele din propoziție într-un vector",
+    "Sortează vectorul după lungimea cuvintelor",
+    "Folosește un algoritm de sortare stabil pentru a păstra ordinea relativă"
+  ]
 }

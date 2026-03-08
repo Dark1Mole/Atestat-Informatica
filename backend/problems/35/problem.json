@@ -1,12 +1,13 @@
 {
   "id": 35,
-  "title": "Sortare caractere",
-  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se afișeze șirul cu caracterele sortate alfabetic.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul sortat",
-  "example": {
-    "input": "bac",
-    "output": "abc"
-  },
-  "difficulty": "easy"
+  "title": "Sablon comun",
+  "category": "Siruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Un sir de caractere `s` se numeste sablon pentru un alt sir de caractere `x` daca este format din caractere din multimea (*, ?, #), are aceeasi lungime cu `x` si:\n- pe fiecare pozitie din `s` in care apare `*`, in `x` se gaseste o vocala;\n- pe fiecare pozitie din `s` in care apare `#`, in `x` se gaseste o consoana;\n- pe fiecare pozitie din `s` in care apare `?`, in `x` poate aparea orice caracter.\n\nSe considera vocala orice litera din multimea (a, e, i, o, u).\n\n**Cerinta:** Citeste doua siruri de caractere de aceeasi lungime, formate din cel mult 200 de litere mici ale alfabetului englez, si afiseaza un sablon comun celor doua siruri, care contine un numar minim de caractere `?`.\n\n### Exemplu\n\n**Intrare:**\n```\ndiamant\npierdut\n```\n\n**Iesire:**\n```\n#**#??#\n```",
+  "tips": [
+    "Compara caracterele de pe aceeasi pozitie din cele doua siruri",
+    "Daca ambele sunt vocale, pune `*`; daca ambele sunt consoane, pune `#`",
+    "Altfel, pune `?`"
+  ]
 }

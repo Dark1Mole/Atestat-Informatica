@@ -1,12 +1,13 @@
 {
   "id": 29,
-  "title": "Comparare șiruri",
-  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze:\n- 0 dacă șirurile sunt egale\n- -1 dacă primul șir este mai mic lexicografic\n- 1 dacă primul șir este mai mare lexicografic",
-  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
-  "outputFormat": "0, -1 sau 1",
-  "example": {
-    "input": "abc\nabd",
-    "output": "-1"
-  },
-  "difficulty": "easy"
+  "title": "Prima și ultima literă majuscule",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un text de cel mult 50 de caractere (litere mici ale alfabetului englez și spații), text format din mai multe cuvinte separate prin câte un spațiu.\n\n**Cerință:** Afișează textul obținut din cel inițial prin transformarea primei și a ultimei litere a fiecărui cuvânt în majusculă.\n\n### Exemplu\n\n**Intrare:**\n```\nazi este examen de bacalaureat\n```\n\n**Ieșire:**\n```\nAzI EstE ExameN DE BacalaureaT\n```",
+  "tips": [
+    "Identifică începutul și sfârșitul fiecărui cuvânt",
+    "Transformă prima și ultima literă în majusculă",
+    "Pentru cuvinte cu o singură literă, doar ea devine majusculă"
+  ]
 }

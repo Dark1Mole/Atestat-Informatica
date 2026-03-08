@@ -1,12 +1,13 @@
 {
   "id": 3,
-  "title": "Numărare consoane",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de consoane din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Un număr natural reprezentând numărul de consoane",
-  "example": {
-    "input": "programare",
-    "output": "6"
-  },
-  "difficulty": "easy"
+  "title": "Ultima consoană",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se consideră un text cu maximum 255 de caractere, format din litere mici ale alfabetului englez și spații. Textul conține cel puțin o consoană.\n\n**Cerință:** Afișează numai ultima consoană care apare în text.\n\n### Exemplu\n\n**Intrare:**\n```\nmare frig saci\n```\n\n**Ieșire:**\n```\nc\n```",
+  "tips": [
+    "Parcurge șirul de la sfârșit spre început",
+    "Verifică dacă caracterul NU este vocală (a, e, i, o, u) și NU este spațiu",
+    "Prima consoană găsită de la sfârșit este ultima consoană din text"
+  ]
 }

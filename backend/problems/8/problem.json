@@ -1,12 +1,13 @@
 {
   "id": 8,
-  "title": "Prima vocală",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze poziția (indexată de la 0) primei vocale din șir.\n\nDacă nu există nicio vocală, se afișează -1.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Poziția primei vocale sau -1",
-  "example": {
-    "input": "programare",
-    "output": "2"
-  },
-  "difficulty": "easy"
+  "title": "Număr cuvinte și consoane",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură o frază de maximum 255 de caractere (litere mari ale alfabetului englez și spații), ale cărei cuvinte sunt despărțite prin câte un spațiu.\n\n**Cerință:** Afișează pe primul rând numărul total al cuvintelor din frază, iar pe rândul următor, în ordine alfabetică, scrise o singură dată, consoanele care au apărut în frază, separate prin câte un spațiu. Se consideră consoane toate literele alfabetului englez, mai puțin A, E, I, O, U.\n\n### Exemplu\n\n**Intrare:**\n```\nLA BACALAUREAT SUBIECTELE AU FOST USOARE\n```\n\n**Ieșire:**\n```\n6\nB C F L R S T\n```",
+  "tips": [
+    "Numără cuvintele observând tranzițiile de la spațiu la literă",
+    "Folosește un vector de frecvență pentru consoane",
+    "Afișează consoanele în ordine alfabetică (de la B la Z, excluzând vocalele)"
+  ]
 }

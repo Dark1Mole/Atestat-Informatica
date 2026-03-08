@@ -1,12 +1,13 @@
 {
   "id": 2,
-  "title": "Numărare vocale",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de vocale (a, e, i, o, u) din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Un număr natural reprezentând numărul de vocale",
-  "example": {
-    "input": "informatica",
-    "output": "5"
-  },
-  "difficulty": "easy"
+  "title": "Majuscule la început de cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se consideră un text de maximum 255 de caractere, în care cuvintele sunt separate prin unul sau mai multe spații. Primul caracter al textului este o literă, iar cuvintele sunt formate numai din litere mici ale alfabetului englez.\n\n**Cerință:** Transformă textul înlocuind prima literă a fiecărui cuvânt cu litera mare corespunzătoare, restul caracterelor rămânând nemodificate. Afișează textul astfel transformat.\n\n### Exemplu\n\n**Intrare:**\n```\nmare   frig rosu\n```\n\n**Ieșire:**\n```\nMare   Frig Rosu\n```",
+  "tips": [
+    "Parcurge șirul și verifică dacă caracterul anterior este spațiu",
+    "Prima literă a textului trebuie transformată în majusculă",
+    "Pentru a transforma în majusculă: `c = c - 'a' + 'A'` sau `c = c - 32`"
+  ]
 }

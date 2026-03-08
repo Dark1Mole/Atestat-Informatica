@@ -1,12 +1,13 @@
 {
   "id": 25,
-  "title": "Subșir",
-  "description": "Se citește un șir de caractere și două numere naturale i și j (i ≤ j).\n\nSă se afișeze subșirul care începe de la poziția i și se termină la poziția j (indexare de la 0).",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie numerele i și j separate prin spațiu",
-  "outputFormat": "Subșirul extras",
-  "example": {
-    "input": "informatica\n2 5",
-    "output": "form"
-  },
-  "difficulty": "easy"
+  "title": "Prefixe cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un cuvânt format din cel mult 50 de caractere, litere mari ale alfabetului englez.\n\n**Cerință:** Afișează fiecare pe câte o linie, toate prefixele acestuia, în ordine crescătoare a lungimilor. Un prefix de lungime k al unui cuvânt este subșirul format din primele k caractere ale acestuia.\n\n### Exemplu\n\n**Intrare:**\n```\nBACALAUREAT\n```\n\n**Ieșire:**\n```\nB\nBA\nBAC\nBACA\nBACAL\nBACALA\nBACALAU\nBACALAUR\nBACALAURE\nBACALAUREA\nBACALAUREAT\n```",
+  "tips": [
+    "Parcurge de la 1 la lungimea șirului",
+    "Pentru fiecare i, afișează primele i caractere",
+    "Folosește un ciclu for pentru a construi fiecare prefix"
+  ]
 }

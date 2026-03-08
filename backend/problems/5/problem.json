@@ -1,12 +1,13 @@
 {
   "id": 5,
-  "title": "Verificare palindrom",
-  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se verifice dacă șirul este palindrom (se citește la fel de la stânga la dreapta și invers).\n\nDacă este palindrom, se afișează 'DA', altfel 'NU'.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "'DA' sau 'NU'",
-  "example": {
-    "input": "aba",
-    "output": "DA"
-  },
-  "difficulty": "easy"
+  "title": "Cel mai lung sufix comun",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citesc de la tastatură două șiruri de caractere formate din maximum 100 de litere mici ale alfabetului englez.\n\n**Cerință:** Determină și afișează cel mai lung sufix comun al celor două șiruri de caractere. Dacă cele două șiruri nu au niciun sufix comun, afișează mesajul `NU EXISTA`.\n\n### Exemplu\n\n**Intrare:**\n```\nmarina\nelena\n```\n\n**Ieșire:**\n```\nna\n```",
+  "tips": [
+    "Compară caracterele de la sfârșitul ambelor șiruri",
+    "Construiește sufixul comun cât timp caracterele coincid",
+    "Folosește doi indici care pornesc de la finalul fiecărui șir"
+  ]
 }

@@ -1,12 +1,13 @@
 {
   "id": 18,
-  "title": "Caractere distincte",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze numărul de caractere distincte din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Numărul de caractere distincte",
-  "example": {
-    "input": "informatica",
-    "output": "8"
-  },
-  "difficulty": "medium"
+  "title": "Inițiale cuvinte",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură o frază având maximum 100 de caractere, în care cuvintele sunt separate prin câte un spațiu.\n\n**Cerință:** Construiește și afișează un șir ce conține doar primul caracter al fiecăruia dintre cuvintele frazei, în ordinea în care acestea apar în frază.\n\n### Exemplu\n\n**Intrare:**\n```\nAna sustine bacalaureatul la informatica\n```\n\n**Ieșire:**\n```\nAsbli\n```",
+  "tips": [
+    "Primul caracter al frazei este automat prima inițială",
+    "Fiecare caracter de după un spațiu este o inițială",
+    "Construiește un șir cu aceste caractere"
+  ]
 }

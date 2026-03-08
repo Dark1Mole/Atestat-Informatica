@@ -1,12 +1,13 @@
 {
   "id": 26,
-  "title": "Inserare caracter",
-  "description": "Se citește un șir de caractere, un caracter c și o poziție p.\n\nSă se afișeze șirul în care caracterul c a fost inserat la poziția p (indexare de la 0).",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie caracterul c\nPe a treia linie poziția p",
-  "outputFormat": "Șirul cu caracterul inserat",
-  "example": {
-    "input": "abc\nx\n1",
-    "output": "axbc"
-  },
-  "difficulty": "easy"
+  "title": "Sufixe cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un cuvânt format din cel mult 50 de caractere, litere mari ale alfabetului englez.\n\n**Cerință:** Afișează fiecare pe câte o linie, toate sufixele acestuia, în ordine crescătoare a lungimilor. Un sufix de lungime k al unui cuvânt este subșirul format din ultimele k caractere ale acestuia.\n\n### Exemplu\n\n**Intrare:**\n```\nEXAMEN\n```\n\n**Ieșire:**\n```\nN\nEN\nMEN\nAMEN\nXAMEN\nEXAMEN\n```",
+  "tips": [
+    "Parcurge de la 1 la lungimea șirului",
+    "Pentru fiecare i, afișează ultimele i caractere",
+    "Sufixul de lungime i începe de la poziția n-i"
+  ]
 }

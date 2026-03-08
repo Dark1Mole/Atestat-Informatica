@@ -1,12 +1,13 @@
 {
   "id": 27,
-  "title": "Ștergere caracter de pe poziție",
-  "description": "Se citește un șir de caractere și o poziție p.\n\nSă se afișeze șirul din care a fost șters caracterul de pe poziția p (indexare de la 0).",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie poziția p",
-  "outputFormat": "Șirul fără caracterul de pe poziția p",
-  "example": {
-    "input": "abcdef\n2",
-    "output": "abdef"
-  },
-  "difficulty": "easy"
+  "title": "Numărare cuvinte și vocale",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se consideră un text având maximum 255 de caractere, format numai din litere mici ale alfabetului englez și spații, în care oricare două cuvinte alăturate sunt despărțite printr-un singur spațiu, iar ultimul caracter nu este spațiu.\n\n**Cerință:** Afișează, despărțite printr-un spațiu, numărul total de cuvinte din text și câte dintre acestea au prima literă vocală (a, e, i, o sau u).\n\n### Exemplu\n\n**Intrare:**\n```\nele sunt eleve in clasa a opta\n```\n\n**Ieșire:**\n```\n7 5\n```",
+  "tips": [
+    "Numără cuvintele observând tranzițiile de la spațiu la literă",
+    "Pentru fiecare cuvânt, verifică dacă prima literă e vocală",
+    "Primul caracter al textului e prima literă a primului cuvânt"
+  ]
 }

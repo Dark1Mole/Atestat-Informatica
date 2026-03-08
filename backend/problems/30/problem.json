@@ -1,12 +1,13 @@
 {
   "id": 30,
-  "title": "Verificare subșir",
-  "description": "Se citesc două șiruri de caractere s1 și s2.\n\nSă se verifice dacă s2 este subșir (apare ca secvență consecutivă) în s1.\n\nDacă da, se afișează poziția primei apariții (indexare de la 0). Altfel, se afișează -1.",
-  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
-  "outputFormat": "Poziția primei apariții sau -1",
-  "example": {
-    "input": "informatica\nform",
-    "output": "2"
-  },
-  "difficulty": "medium"
+  "title": "Inserare caracter după cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un text cu cel mult 100 de caractere și un cuvânt cu cel mult 15 litere. Literele textului și ale cuvântului sunt litere mici ale alfabetului englez.\n\n**Cerință:** Afișează șirul obținut prin inserarea caracterului `?` după fiecare apariție a cuvântului citit în text. Dacă în text nu apare cuvântul citit, se va afișa mesajul `NU APARE`.\n\n### Exemplu\n\n**Intrare:**\n```\nexamenului examenul de bacalaureat si examenul de atestat\nexamenul\n```\n\n**Ieșire:**\n```\nexamenului examenul? de bacalaureat si examenul? de atestat\n```",
+  "tips": [
+    "Caută cuvântul în text folosind funcția `strstr` sau parcurgere manuală",
+    "Inserează `?` după fiecare apariție completă a cuvântului",
+    "Ai grijă să nu inserezi ? când cuvântul e doar prefix al altui cuvânt"
+  ]
 }

@@ -1,0 +1,372 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}}
+\fs24
+\b Probleme cu șiruri de caractere – selecție tip BAC (403933312-Probleme-Siruri-Bac.pdf)\par
+\b0 Toate problemele se pot rezolva la calculator, în C/C++, cu date citite de la tastatură și rezultate afișate la ecran.\par
+\par
+\b Problema 1 (coresp. nr. 2 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un cuvânt format din cel mult 20 de caractere, doar litere ale alfabetului englez.\par
+Programul determină transformarea cuvântului citit prin eliminarea fiecărei litere mici a cuvântului, restul literelor nemodificându-se.\par
+Programul afişează pe ecran cuvântul obţinut. Dacă în cuvânt apar numai litere mici, se va afişa mesajul \i CUVANT VID\i0.\par
+Exemple:\par
+- pentru cuvântul \i baCALaUreaT\i0 se va afişa \i CALUT\i0;\par
+- pentru cuvântul \i vara\i0 se va afişa \i CUVANT VID\i0.\par
+\par
+\b Problema 2 (coresp. nr. 6 din PDF)\par
+\b0 Se consideră un text de maximum 255 de caractere, în care cuvintele sunt separate prin unul sau mai multe spaţii.\par
+Primul caracter al textului este o literă, iar cuvintele sunt formate numai din litere mici ale alfabetului englez.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de text şi îl transformă înlocuind prima literă a fiecărui cuvânt cu litera mare corespunzătoare, restul caracterelor rămânând nemodificate.\par
+Programul va afişa pe ecran textul astfel transformat.\par
+Exemplu: pentru textul \i mare   frig rosu\i0 se va afişa \i Mare   Frig Rosu\i0 (numărul spaţiilor dintre cuvinte se păstrează).\par
+\par
+\b Problema 3 (coresp. nr. 7 din PDF)\par
+\b0 Se consideră un text cu maximum 255 de caractere, format din litere mici ale alfabetului englez şi spaţii.\par
+Textul conţine cel puţin o consoană.\par
+Scrieţi un program C/C++ care citeşte textul de la tastatură şi afişează pe ecran numai ultima consoană care apare în text.\par
+Exemplu: pentru textul \i mare frig saci\i0 se va afişa \i c\i0.\par
+\par
+\b Problema 4 (coresp. nr. 21 din PDF)\par
+\b0 Se consideră un text alcătuit din cel mult 250 de caractere, în care cuvintele sunt formate doar din litere mici ale alfabetului englez şi sunt separate prin unul sau mai multe caractere \i *\i0.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de text şi afişează pe ecran, pe câte o linie, toate secvenţele formate din câte două litere identice, în ordinea apariţiei lor în text.\par
+Exemplu: pentru textul \i copiii*sunt*la***zoo\i0 se vor afişa pe linii diferite: \i ii\i0, \i ii\i0, \i oo\i0.\par
+\par
+\b Problema 5 (coresp. nr. 24 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură două şiruri de caractere formate din maximum 100 de litere mici ale alfabetului englez.\par
+Programul determină şi afişează pe ecran cel mai lung sufix comun al celor două şiruri de caractere.\par
+Dacă cele două şiruri nu au niciun sufix comun, atunci se va afişa pe ecran mesajul \i NU EXISTĂ\i0.\par
+Exemplu: pentru şirurile \i marina\i0 şi \i elena\i0 se va afişa \i na\i0.\par
+\par
+\b Problema 6 (coresp. nr. 28 din PDF)\par
+\b0 Se spune că un şir de caractere \i s2\i0 este „clona” şirului de caractere \i s1\i0 dacă se poate obţine din \i s1\i0 prin eliminarea tuturor apariţiilor unei singure vocale.\par
+Se consideră vocală orice literă din mulţimea {a, e, i, o, u}.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un cuvânt format din cel mult 20 de litere mici ale alfabetului englez şi afişează pe ecran toate „clonele” acestui cuvânt, fiecare pe câte o linie a ecranului.\par
+Exemplu: pentru cuvântul \i informatica\i0 se pot afişa, în orice ordine, cuvintele: \i nformatca\i0, \i infrmatica\i0, \i informtic\i0.\par
+\par
+\b Problema 7 (coresp. nr. 32 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură două caractere \i c1\i0 şi \i c2\i0 şi un text de cel mult 250 de caractere (spaţii şi litere ale alfabetului englez).\par
+Programul va modifica textul înlocuind toate apariţiile caracterului memorat în \i c1\i0 cu caracterul memorat în \i c2\i0, şi toate apariţiile caracterului memorat în \i c2\i0 cu caracterul memorat în \i c1\i0.\par
+Programul va afişa pe linii separate ale ecranului atât textul iniţial, cât şi textul obţinut după efectuarea înlocuirilor.\par
+Exemplu: pentru \i c1\i0=\i a\i0, \i c2\i0=\i o\i0 şi textul \i hocus pocus preparatus\i0, se va afişa:\par
+\i hocus pocus preparatus\i0\par
+\i hacus pacus preporotus\i0\par
+\par
+\b Problema 8 (coresp. nr. 33 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură o frază de maximum 255 de caractere (litere mari ale alfabetului englez şi spaţii), ale cărei cuvinte sunt despărţite prin câte un spaţiu.\par
+Programul va afişa:\par
+- pe primul rând al ecranului numărul total al cuvintelor din frază;\par
+- pe rândul următor, în ordine alfabetică, scrise o singură dată, consoanele care au apărut în frază, separate prin câte un spaţiu.\par
+Se consideră consoane toate literele alfabetului englez, mai puţin A, E, I, O, U.\par
+Exemplu: pentru fraza \i LA BACALAUREAT SUBIECTELE AU FOST USOARE\i0 se va afişa:\par
+\i 6\i0\par
+\i B C F L R S T\i0\par
+\par
+\b Problema 9 (coresp. nr. 37 din PDF)\par
+\b0 Un şir cu maximum 255 de caractere conţine cuvinte separate prin unul sau mai multe spaţii, formate numai din litere mici ale alfabetului englez.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de şir şi îl afişează modificat, astfel încât prima şi ultima literă a fiecărui cuvânt să fie afişată ca literă mare.\par
+Exemplu: pentru şirul \i maine este proba la informatica\i0 se va afişa \i MainE EstE ProbA LA InformaticA\i0.\par
+\par
+\b Problema 10 (coresp. nr. 39 din PDF)\par
+\b0 Un şir cu maximum 255 de caractere conţine cuvinte separate prin câte un spaţiu, formate numai din litere mici ale alfabetului englez.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de şir şi îl afişează pe ecran modificat, inversând prin oglindire doar cuvintele care încep cu vocală.\par
+Se consideră vocale literele din mulţimea {a, e, i, o, u}.\par
+Exemplu: pentru şirul \i maine este proba la informatica\i0 se va afişa \i maine etse proba la acitamrofni\i0.\par
+\par
+\b Problema 11 (coresp. nr. 40 din PDF)\par
+\b0 Un şir cu maximum 255 de caractere conţine cuvinte formate numai din litere mici ale alfabetului englez, fiecare cuvânt fiind urmat de caracterul \i *\i0.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de şir şi afişează pe ecran şirul obţinut prin eliminarea tuturor apariţiilor primului cuvânt (împreună cu caracterul \i *\i0 corespunzător), păstrând ordinea celorlalte cuvinte.\par
+Exemplu: pentru şirul \i bine*albine*foarte*bine*\i0 se va afişa \i *albine*foarte**\i0.\par
+\par
+\b Problema 12 (coresp. nr. 42 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un şir de cel mult 40 de caractere, format doar din litere mici ale alfabetului englez, şi care afişează pe ecran, pe o singură linie, toate vocalele ce apar în şirul citit.\par
+Vocalele vor fi afişate în ordinea apariţiei lor în şir, separate prin câte un spaţiu.\par
+Se consideră vocale literele: a, e, i, o, u.\par
+Dacă şirul citit nu conţine nicio vocală, se va afişa pe ecran mesajul \i fara vocale\i0.\par
+Exemplu: pentru şirul \i calculator\i0 se va afişa \i a u a o\i0.\par
+\par
+\b Problema 13 (coresp. nr. 45 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir de cel mult 40 de caractere, format doar din litere ale alfabetului englez, şi care afişează pe ecran toate şirurile obţinute prin eliminarea succesivă a câte unei singure litere din şirul citit.\par
+Şirurile se vor afişa câte unul pe câte o linie a ecranului.\par
+Exemplu: pentru şirul \i abbc\i0 se pot afişa (în această ordine): \i bbc\i0, \i abc\i0, \i abc\i0, \i abb\i0.\par
+\par
+\b Problema 14 (coresp. nr. 46 din PDF)\par
+\b0 Se consideră un text format doar din spaţii şi litere mici ale alfabetului englez, care începe cu o literă şi care conţine cel puţin o vocală din mulţimea {a, e, i, o, u}.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un şir de cel mult 100 de caractere, ca cel descris, şi care înlocuieşte fiecare vocală din text cu litera imediat următoare din alfabet (a se înlocuieşte cu b, e cu f etc.).\par
+Programul va afişa pe ecran şirul obţinut.\par
+Exemplu: pentru şirul \i examen de bacalaureat\i0 se va afişa \i fxbmfn df bbcblbvrfbt\i0.\par
+\par
+\b Problema 15 (coresp. nr. 49 din PDF)\par
+\b0 Un cuvânt \i s\i0, de cel mult 20 de caractere, format doar din litere mici ale alfabetului englez, conţine cel puţin o consoană.\par
+Scrieţi un program C/C++ care citeşte de la tastatură cuvântul \i s\i0, construieşte în memorie şi afişează pe ecran cuvântul obţinut prin eliminarea tuturor consoanelor din \i s\i0.\par
+Se consideră consoană orice literă care nu se află în mulţimea {a, e, i, o, u}.\par
+Exemplu: pentru cuvântul \i bacalaureat\i0 se va afişa \i aaauea\i0.\par
+\par
+\b Problema 16 (coresp. nr. 50 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un cuvânt \i s\i0 de cel mult 20 de litere mici ale alfabetului englez.\par
+Programul construieşte în memorie şi afişează pe ecran cuvântul obţinut din \i s\i0 după eliminarea primei şi a ultimei vocale.\par
+Se garantează că \i s\i0 conţine cel puţin două vocale. Se consideră vocale literele a, e, i, o, u.\par
+Exemplu: pentru cuvântul \i bacalaureat\i0 se va afişa \i bcalauret\i0.\par
+\par
+\b Problema 17 (coresp. nr. 51 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir având maximum 30 de caractere şi afişează pe ecran mesajul \i DA\i0 în cazul în care şirul conţine numai litere şi spaţii, iar în caz contrar afişează mesajul \i NU\i0.\par
+Exemplu: pentru şirul \i Ana, Bogdan au 18 ani.\i0 se va afişa \i NU\i0.\par
+\par
+\b Problema 18 (coresp. nr. 52 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură o frază având maximum 100 de caractere, în care cuvintele sunt separate prin câte un spaţiu.\par
+Programul construieşte în memorie şi afişează pe ecran un şir ce conţine doar primul caracter al fiecăruia dintre cuvintele frazei, în ordinea în care acestea apar în frază.\par
+Exemplu: pentru fraza \i Ana sustine bacalaureatul la informatica\i0 se va afişa \i Asbli\i0.\par
+\par
+\b Problema 19 (coresp. nr. 55 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir format din maximum 100 de caractere.\par
+Programul construieşte în memorie şi afişează un nou şir de caractere obţinut din şirul iniţial prin eliminarea tuturor caracterelor care nu sunt cifre.\par
+Dacă noul şir are lungimea 0, se va afişa mesajul \i Sir vid\i0.\par
+Exemplu: pentru şirul \i Ana are 17 ani .\i0 se va afişa \i 17\i0.\par
+\par
+\b Problema 20 (coresp. nr. 58 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir de cel mult 50 de caractere (litere mici şi mari ale alfabetului englez, cifre şi spaţii).\par
+Programul determină şi afişează pe ecran câte litere mari, câte litere mici şi câte caractere care nu sunt litere apar în şirul citit.\par
+Exemplu: pentru şirul \i Voi lua 9 la matematica si 10 la informatica\i0 se va afişa, de exemplu, \i 1 32 11\i0 (1 literă mare, 32 litere mici, 11 alte caractere).\par
+\par
+\b Problema 21 (coresp. nr. 59 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir de cel mult 50 de caractere (litere mici şi mari ale alfabetului englez, cifre, puncte, virgule şi spaţii).\par
+Programul determină cifra care apare de cele mai multe ori în şirul citit şi o afişează pe ecran.\par
+Dacă şirul conţine mai multe cifre cu număr maxim de apariţii, se va afişa cea mai mică dintre acestea.\par
+Dacă şirul nu conţine nicio cifră, se va afişa pe ecran mesajul \i NU\i0.\par
+\par
+\b Problema 22 (coresp. nr. 60 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un şir de cel mult 50 de caractere (litere mici şi mari ale alfabetului englez, cifre şi spaţii).\par
+Programul afişează pe ecran litera mică cel mai des întâlnită în şirul citit.\par
+Dacă există mai multe litere mici cu număr maxim de apariţii, se va afişa prima dintre ele în ordine alfabetică.\par
+Dacă şirul nu conţine litere mici, se va afişa mesajul \i nu\i0.\par
+Exemplu: pentru şirul \i mergem la munte\i0 se va afişa \i e\i0 (deoarece literele e şi m apar de cele mai multe ori, iar e este prima în ordine alfabetică).\par
+\par
+\b Problema 23 (coresp. nr. 62 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un text de cel mult 255 de caractere, dintre care cel puţin unul este o literă mică a alfabetului englez.\par
+Programul va afişa pe o singură linie, despărţite prin câte un spaţiu, toate literele mici ale alfabetului englez care apar în text, fiecare literă o singură dată, în ordinea primei ei apariţii.\par
+Exemplu: pentru textul \i Calculati valoarea expresiei\i0 se poate afişa \i a l c u t i v o r e x p s\i0.\par
+\par
+\b Problema 24 (coresp. nr. 64 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un text format din cel mult 200 de litere ale alfabetului englez, în care cuvintele sunt separate printr-un singur spaţiu.\par
+Programul va determina şi afişa pe ecran numărul de cuvinte din textul citit care au atât prima, cât şi ultima literă vocală (din mulţimea {a, A, e, E, i, I, o, O, u, U}).\par
+Dacă în text nu există un astfel de cuvânt, se va afişa pe ecran mesajul \i NU EXISTA\i0.\par
+Exemplu: pentru textul \i Eratostene a sugerat ca anii bisecti se repeta la fiecare patru ani\i0 se va afişa \i 4\i0.\par
+\par
+\b Problema 25 (coresp. nr. 66 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un cuvânt format din cel mult 50 de caractere, litere mari ale alfabetului englez, şi afişează pe ecran, fiecare pe câte o linie, toate prefixele acestuia, în ordine crescătoare a lungimilor.\par
+Un prefix de lungime \i k\i0 al unui cuvânt este subşirul format din primele \i k\i0 caractere ale acestuia.\par
+Exemplu: pentru cuvântul \i BACALAUREAT\i0 se vor afişa: \i B\i0, \i BA\i0, \i BAC\i0, ..., \i BACALAUREAT\i0.\par
+\par
+\b Problema 26 (coresp. nr. 67 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un cuvânt format din cel mult 50 de caractere, litere mari ale alfabetului englez, şi afişează pe ecran, fiecare pe câte o linie, toate sufixele acestuia, în ordine crescătoare a lungimilor.\par
+Un sufix de lungime \i k\i0 al unui cuvânt este subşirul format din ultimele \i k\i0 caractere ale acestuia.\par
+Exemplu: pentru cuvântul \i EXAMEN\i0 se vor afişa: \i N\i0, \i EN\i0, \i MEN\i0, \i AMEN\i0, \i XAMEN\i0, \i EXAMEN\i0.\par
+\par
+\b Problema 27 (coresp. nr. 73 din PDF)\par
+\b0 Se consideră un text având maximum 255 de caractere, format numai din litere mici ale alfabetului englez şi spaţii, în care oricare două cuvinte alăturate sunt despărţite printr-un singur spaţiu, iar ultimul caracter nu este spaţiu.\par
+Scrieţi un program C/C++ care citeşte de la tastatură un astfel de text şi afişează pe ecran, despărţite printr-un spaţiu, numărul total de cuvinte din text şi câte dintre acestea au prima literă vocală (a, e, i, o sau u).\par
+Exemplu: pentru textul \i ele sunt eleve in clasa a opta\i0 se va afişa \i 7 5\i0.\par
+\par
+\b Problema 28 (coresp. nr. 76 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un cuvânt de maximum 20 de litere (cel puţin o literă) şi afişează pe ecran cuvântul citit precum şi toate cuvintele obţinute din cuvântul citit prin eliminarea primei şi a ultimei litere.\par
+Prima prelucrare se aplică asupra cuvântului citit, iar următoarele asupra cuvântului rezultat la pasul anterior.\par
+Procedeul de eliminare şi afişare se repetă până când se obţine cuvântul vid. Cuvântul iniţial şi fiecare cuvânt obţinut se vor afişa pe câte o linie a ecranului.\par
+Exemplu: pentru cuvântul \i bacalaureat\i0 se va afişa:\par
+\i bacalaureat\par
+acalaurea\par
+calaure\par
+alaur\par
+lau\par
+a\i0\par
+\par
+\b Problema 29 (coresp. nr. 77 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un text de cel mult 50 de caractere (litere mici ale alfabetului englez şi spaţii), text format din mai multe cuvinte separate prin câte un spaţiu.\par
+Programul afişează pe ecran textul obţinut din cel iniţial prin transformarea primei şi a ultimei litere a fiecărui cuvânt în majusculă.\par
+Exemplu: pentru textul \i azi este examen de bacalaureat\i0 se va afişa \i AzI EstE ExameN DE BacalaureaT\i0.\par
+\par
+\b Problema 30 (coresp. nr. 78 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un text cu cel mult 100 de caractere şi un cuvânt cu cel mult 15 litere.\par
+Literele textului şi ale cuvântului sunt litere mici ale alfabetului englez.\par
+Programul afişează şirul obţinut prin inserarea caracterului \i ?\i0 după fiecare apariţie a cuvântului citit în text.\par
+Dacă în text nu apare cuvântul citit, se va afişa mesajul \i NU APARE\i0.\par
+Exemplu: pentru textul \i examenului examenul de bacalaureat si examenul de atestat\i0 şi cuvântul \i examenul\i0, se va afişa \i examenului examenul? de bacalaureat si examenul? de atestat\i0.\par
+\par
+\b Problema 31 (coresp. nr. 79 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un text cu cel mult 100 de caractere (litere ale alfabetului englez şi spaţii).\par
+Programul construieşte în memorie şi apoi afişează pe ecran şirul de caractere obţinut din şirul iniţial prin inserarea caracterului \i *\i0 după fiecare vocală.\par
+Se consideră vocale literele a, e, i, o, u, A, E, I, O, U.\par
+Dacă textul citit nu conţine vocale, se va afişa mesajul \i FARA VOCALE\i0.\par
+Exemplu: pentru textul \i Examenul de bacalaureat\i0 se va afişa \i E*xa*me*nu*l de* ba*ca*la*u*re*a*t\i0.\par
+\par
+\b Problema 32 (coresp. nr. 80 din PDF)\par
+\b0 Scrieţi programul C/C++ care citeşte de la tastatură un cuvânt cu cel puţin una şi cel mult 20 de litere ale alfabetului englez.\par
+Programul construieşte şi afişează pe ecran cuvântul obţinut prin interschimbarea primei consoane cu ultima vocală din cuvânt.\par
+În cazul în care cuvântul este format numai din vocale sau numai din consoane, programul afişează pe ecran mesajul \i IMPOSIBIL\i0.\par
+Se consideră vocale literele a, e, i, o, u, A, E, I, O, U.\par
+Exemplu: pentru cuvântul \i Marmorat\i0 se va obţine şi afişa cuvântul \i aarmorMt\i0.\par
+\par
+\b Problema 33 (coresp. nr. 81 din PDF)\par
+\b0 Variabila \i cuv\i0 reţine un cuvânt format din cel mult 25 de litere mici ale alfabetului englez.\par
+Scrieţi un program C/C++ care citeşte cuvântul în variabila \i cuv\i0 şi afişează pe ecran:\par
+- litera din mijloc a cuvântului, dacă acesta are un număr impar de caractere;\par
+- cele două litere din mijloc, dacă acesta are un număr par de caractere.\par
+Exemplu: pentru cuvântul \i mihai\i0 se va afişa litera \i h\i0.\par
+\par
+\b Problema 34 (coresp. nr. 83 din PDF)\par
+\b0 Variabila \i cuv\i0 reţine un cuvânt format din cel mult 25 de litere mici ale alfabetului englez.\par
+Scrieţi un program C/C++ care afişează pe ecran vocalele cuvântului, în ordinea apariţiei lor în cuvânt.\par
+Exemplu: pentru cuvântul \i examen\i0 se vor afişa vocalele \i eae\i0.\par
+\par
+\b Problema 35 (coresp. nr. 93 din PDF)\par
+\b0 Un şir de caractere \i s\i0 se numeşte „şablon” pentru un alt şir de caractere \i x\i0 dacă este format din caractere din mulţimea {*, ?, #}, are aceeaşi lungime cu \i x\i0 şi:\par
+- pe fiecare poziţie din \i s\i0 în care apare \i *\i0, în \i x\i0 se găseşte o vocală;\par
+- pe fiecare poziţie din \i s\i0 în care apare \i #\i0, în \i x\i0 se găseşte o consoană;\par
+- pe fiecare poziţie din \i s\i0 în care apare \i ?\i0, în \i x\i0 poate apărea orice caracter.\par
+Se consideră vocală orice literă din mulţimea {a, e, i, o, u}.\par
+Scrieţi programul C/C++ care citeşte de la tastatură două şiruri de caractere de aceeaşi lungime, formate din cel mult 200 de litere mici ale alfabetului englez, şi afişează pe ecran un şablon comun celor două şiruri, care conţine un număr minim de caractere \i ?\i0.\par
+Exemplu: pentru şirurile \i diamant\i0 şi \i pierdut\i0 se va afişa \i #**#??#\i0.\par
+\par
+\b Problema 36 (coresp. nr. 94 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un singur şir, format din cel mult 20 de caractere, care reprezintă numele şi prenumele unei persoane.\par
+Între nume şi prenume se află un număr oarecare de spaţii (cel puţin unul). Atât numele, cât şi prenumele sunt formate numai din litere ale alfabetului englez.\par
+Programul construieşte în memorie şi afişează pe ecran un al doilea şir de caractere, care conţine prenumele, urmat de exact un spaţiu şi apoi numele din şirul citit iniţial.\par
+Exemplu: pentru şirul \i Popescu   Vasile\i0 se va afişa \i Vasile Popescu\i0.\par
+\par
+\b Problema 37 (coresp. nr. 95 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură un singur şir, format din cel mult 20 de caractere, care reprezintă numele şi prenumele unei persoane.\par
+Între nume şi prenume se află un număr oarecare de spaţii (cel puţin unul). Atât numele, cât şi prenumele sunt formate numai din litere mici ale alfabetului englez.\par
+Programul construieşte în memorie şi afişează pe ecran un şir de caractere care conţine iniţiala prenumelui (prima literă a prenumelui), urmată de un caracter punct, de exact un spaţiu şi de numele din şirul citit iniţial.\par
+Toate literele din şirul afişat vor fi litere mici.\par
+Exemplu: pentru şirul \i popescu vasile\i0 se va afişa \i v. popescu\i0.\par
+\par
+\b Problema 38 (coresp. nr. 96 din PDF)\par
+\b0 Scrieţi un program C/C++ care citeşte de la tastatură două şiruri, formate fiecare din cel mult 20 de caractere.\par
+Primul şir reprezintă numele unei persoane, iar al doilea şir reprezintă prenumele aceleiaşi persoane.\par
+Atât numele, cât şi prenumele sunt formate numai din litere ale alfabetului englez şi fiecare conţine cel puţin o consoană.\par
+Programul construieşte în memorie şi afişează pe ecran un al treilea şir de caractere, care conţine consoanele din prenumele citit dispuse în ordinea în care apar în prenume, urmate de exact un spaţiu şi de numele citit.\par
+Exemplu: pentru numele \i Popescu\i0 şi prenumele \i Vasile\i0 se va afişa \i Vsl Popescu\i0.\par
+\par
+\b Probleme de analiză de cod (tip „Ce se afişează…?”)\par
+\par
+\b Problema 39 (coresp. nr. 8 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++ de mai jos, în care variabila \i s\i0 memorează şirul de caractere \i abcdefgh\i0:\par
+\i strcpy(s+2,s+4);\par
+cout<<s<<" "<<strlen(s);\i0\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 40 (coresp. nr. 9 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++ alăturată, în care variabila \i s\i0 memorează şirul de caractere \i abcdef\i0, iar variabila \i n\i0 este de tip întreg:\par
+\i n=strlen(s);\par
+s[n-1]=s[0];\par
+cout<<s;\i0\par
+Scrieţi ce se afişează pe ecran după executarea secvenţei.\par
+\par
+\b Problema 41 (coresp. nr. 10 din PDF)\par
+\b0 Se consideră declarările:\par
+\i char s[]="abbacdde";\par
+int i;\i0\par
+Ştiind că se execută secvenţa:\par
+\i i=0;\par
+while (i<strlen(s)-1)\par
+ if (s[i]==s[i+1])\par
+ { strcpy(s+i,s+i+2);\par
+   if (i>0) i=i-1;\par
+ }\par
+ else i=i+1;\par
+cout<<s;\i0\par
+Scrieţi ce şir afişează programul.\par
+\par
+\b Problema 42 (coresp. nr. 11 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i strcpy(s,"abracadabra");\par
+i=0;\par
+cout<<strlen(s);\par
+while (i<strlen(s))\par
+ if (s[i]=='a') strcpy(s+i,s+i+1);\par
+ else i=i+1;\par
+cout<<" "<<s;\i0\par
+Variabila \i s\i0 memorează un şir cu cel mult 12 caractere, iar \i i\i0 este variabilă întreagă.\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 43 (coresp. nr. 12 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i char s[13]="informatica";\par
+cout<<strlen(s);\par
+for (i=0;i<strlen(s);i++)\par
+ if (s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')\par
+  s[i]=s[i]+1;\par
+cout<<" "<<s;\i0\par
+Variabila \i s\i0 memorează un şir cu cel mult 12 caractere, iar \i i\i0 este variabilă întreagă.\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 44 (coresp. nr. 13 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i char s[13]="abcdefghoid";\par
+i=0;\par
+cout<<strlen(s);\par
+while (i<strlen(s))\par
+ if (s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')\par
+  strcpy(s+i,s+i+1);\par
+ else i++;\par
+cout<<" "<<s;\i0\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 45 (coresp. nr. 14 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i char s[11]="abcduecda";\par
+cout<<strlen(s);\par
+i=0; j=strlen(s)-1; k=0;\par
+while (i<j)\par
+{ if (s[i]==s[j]) k=k+1;\par
+  i=i+1; j=j-1;\par
+}\par
+cout<<" "<<k;\i0\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 46 (coresp. nr. 15 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i int i=0;\par
+char s[11]="abaemeiut";\par
+cout<<strlen(s);\par
+while (i<strlen(s))\par
+ if (s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')\par
+ { strcpy(s+i,s+i+1); i=i+1; }\par
+ else i=i+2;\par
+cout<<" "<<s;\i0\par
+Scrieţi ce se afişează pe ecran în urma executării secvenţei.\par
+\par
+\b Problema 47 (coresp. nr. 16 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i strcpy(a,"clasa a-XII-a A");\par
+cout<<a<<endl;\par
+for(i=0;i<strlen(a);i++)\par
+ if(a[i]>='a' && a[i]<='z')\par
+  cout<<a[i];\i0\par
+Variabila \i a\i0 memorează un şir cu cel mult 100 de caractere, iar \i i\i0 este variabilă întreagă.\par
+Scrieţi ce se va afişa.\par
+\par
+\b Problema 48 (coresp. nr. 17 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i strcpy(a,"bacalaureat");\par
+n=strlen(a);\par
+cout<<n<<endl;\par
+cout<<a[0]<<'*'<<a[n-1];\i0\par
+Variabila \i a\i0 memorează un şir cu cel mult 100 de caractere.\par
+Scrieţi ce se afişează pe ecran.\par
+\par
+\b Problema 49 (coresp. nr. 19 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i strcpy(x,"bac2008");\par
+for(i=3;i<strlen(x);i++)\par
+ cout<<x[i];\par
+cout<<x<<endl;\i0\par
+Variabila \i x\i0 memorează un şir cu cel mult 100 de caractere, iar \i i\i0 este variabilă întreagă.\par
+Scrieţi ce se afişează pe ecran.\par
+\par
+\b Problema 50 (coresp. nr. 44 din PDF)\par
+\b0 Se consideră secvenţa de program C/C++:\par
+\i strcpy(a,"info");\par
+for(i=2;i<strlen(a);i++)\par
+ cout<<a[i];\i0\par
+Variabila \i a\i0 memorează un şir de caractere, iar \i i\i0 este variabilă întreagă.\par
+Scrieţi ce se afişează pe ecran.\par
+\par
+}

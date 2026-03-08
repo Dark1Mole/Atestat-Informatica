@@ -1,12 +1,13 @@
 {
   "id": 34,
-  "title": "Inversare cuvinte",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze propoziția cu ordinea cuvintelor inversată.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Propoziția cu cuvinte inversate",
-  "example": {
-    "input": "bac la informatica",
-    "output": "informatica la bac"
-  },
-  "difficulty": "medium"
+  "title": "Vocale din cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Variabila `cuv` reține un cuvânt format din cel mult 25 de litere mici ale alfabetului englez.\n\n**Cerință:** Afișează vocalele cuvântului, în ordinea apariției lor în cuvânt.\n\n### Exemplu\n\n**Intrare:**\n```\nexamen\n```\n\n**Ieșire:**\n```\neae\n```",
+  "tips": [
+    "Parcurge cuvântul și verifică fiecare caracter",
+    "Dacă e vocală (a, e, i, o, u), adaugă-l la rezultat",
+    "Afișează vocalele concatenate"
+  ]
 }

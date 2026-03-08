@@ -65,9 +65,9 @@ async function selectProblem(id) {
 
     const panel = document.getElementById('problem-statement');
     const content = document.getElementById('statement-content');
-    content.textContent = problem.statement || 'Fără enunț.';
+    content.textContent = problem.description || 'Fără enunț.';
     panel.classList.remove('hidden');
-  } catch (_) {}
+  } catch (_) { }
 }
 
 function setVerdict(result) {

@@ -1,12 +1,13 @@
 {
   "id": 43,
-  "title": "Cuvinte cu lungime dată",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații și un număr n.\n\nSă se afișeze toate cuvintele care au lungimea egală cu n, separate prin spații.",
-  "inputFormat": "Pe prima linie propoziția\nPe a doua linie numărul n",
-  "outputFormat": "Cuvintele cu lungimea n, separate prin spații",
-  "example": {
-    "input": "bac este greu dar nu imposibil\n3",
-    "output": "bac dar"
-  },
-  "difficulty": "medium"
+  "title": "Anagrame",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Două cuvinte sunt **anagrame** dacă unul poate fi obținut prin rearanjarea literelor celuilalt, adică au aceleași litere cu aceleași frecvențe.\n\n**Cerință:** Se dau două cuvinte formate din litere mici ale alfabetului englez. Verifică dacă cele două cuvinte sunt anagrame. Afișează `DA` dacă sunt anagrame, respectiv `NU` în caz contrar.\n\n### Exemplu\n\n**Intrare:**\n```\nlisten\nsilent\n```\n\n**Ieșire:**\n```\nDA\n```",
+  "tips": [
+    "Numără frecvența fiecărei litere din ambele cuvinte",
+    "Compară frecvențele - trebuie să fie identice",
+    "Alternativ, sortează literele ambelor cuvinte și compară"
+  ]
 }

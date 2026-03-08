@@ -1,12 +1,13 @@
 {
   "id": 20,
-  "title": "Concatenare inversă",
-  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze concatenarea inversului primului șir cu inversul celui de-al doilea șir.",
-  "inputFormat": "Pe prima linie șirul s1 (1 ≤ |s1| ≤ 500)\nPe a doua linie șirul s2 (1 ≤ |s2| ≤ 500)",
-  "outputFormat": "Concatenarea inversurilor",
-  "example": {
-    "input": "abc\nxyz",
-    "output": "cbazyx"
-  },
-  "difficulty": "easy"
+  "title": "Statistici caractere",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir de cel mult 50 de caractere (litere mici și mari ale alfabetului englez, cifre și spații).\n\n**Cerință:** Determină și afișează câte litere mari, câte litere mici și câte caractere care nu sunt litere apar în șirul citit.\n\n### Exemplu\n\n**Intrare:**\n```\nVoi lua 9 la matematica si 10 la informatica\n```\n\n**Ieșire:**\n```\n1 32 11\n```",
+  "tips": [
+    "Parcurge șirul și numără fiecare tip de caracter",
+    "Literă mare: 'A'-'Z', literă mică: 'a'-'z'",
+    "Restul caracterelor (cifre, spații) nu sunt litere"
+  ]
 }

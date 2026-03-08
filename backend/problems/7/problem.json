@@ -1,12 +1,13 @@
 {
   "id": 7,
-  "title": "Minuscule în majuscule",
-  "description": "Se citește un șir de caractere format doar din litere mari și mici ale alfabetului englez.\n\nSă se afișeze șirul în care toate literele mici au fost transformate în litere mari.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul transformat în litere mari",
-  "example": {
-    "input": "bac2025",
-    "output": "BAC2025"
-  },
-  "difficulty": "easy"
+  "title": "Interschimbare caractere",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citesc de la tastatură două caractere `c1` și `c2` și un text de cel mult 250 de caractere (spații și litere ale alfabetului englez).\n\n**Cerință:** Modifică textul înlocuind toate aparițiile caracterului `c1` cu caracterul `c2`, și toate aparițiile caracterului `c2` cu caracterul `c1`. Afișează pe linii separate ale ecranului atât textul inițial, cât și textul obținut după efectuarea înlocuirilor.\n\n### Exemplu\n\n**Intrare:**\n```\na\no\nhocus pocus preparatus\n```\n\n**Ieșire:**\n```\nhocus pocus preparatus\nhacus pacus preporotus\n```",
+  "tips": [
+    "Salvează textul original înainte de modificări",
+    "Parcurge textul și înlocuiește c1 cu c2 și c2 cu c1",
+    "Afișează mai întâi textul original, apoi cel modificat"
+  ]
 }

@@ -1,12 +1,13 @@
 {
   "id": 19,
-  "title": "Cel mai frecvent caracter",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze caracterul care apare de cele mai multe ori.\n\nDacă există mai multe caractere cu frecvență maximă, se afișează primul în ordine alfabetică.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Caracterul cel mai frecvent",
-  "example": {
-    "input": "abracadabra",
-    "output": "a"
-  },
-  "difficulty": "medium"
+  "title": "Extragere cifre",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir format din maximum 100 de caractere.\n\n**Cerință:** Construiește și afișează un nou șir de caractere obținut din șirul inițial prin eliminarea tuturor caracterelor care nu sunt cifre. Dacă noul șir are lungimea 0, se va afișa mesajul `Sir vid`.\n\n### Exemplu\n\n**Intrare:**\n```\nAna are 17 ani .\n```\n\n**Ieșire:**\n```\n17\n```",
+  "tips": [
+    "Parcurge șirul și păstrează doar cifrele",
+    "Un caracter este cifră dacă e între '0' și '9'",
+    "Verifică dacă rezultatul este vid"
+  ]
 }

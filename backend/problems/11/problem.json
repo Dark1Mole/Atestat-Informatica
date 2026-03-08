@@ -1,12 +1,13 @@
 {
   "id": 11,
-  "title": "Suma cifrelor din șir",
-  "description": "Se citește un șir de caractere format din litere și cifre.\n\nSă se afișeze suma cifrelor din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Suma cifrelor din șir",
-  "example": {
-    "input": "a1b2c3",
-    "output": "6"
-  },
-  "difficulty": "easy"
+  "title": "Eliminare primul cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Un șir cu maximum 255 de caractere conține cuvinte formate numai din litere mici ale alfabetului englez, fiecare cuvânt fiind urmat de caracterul `*`.\n\n**Cerință:** Afișează șirul obținut prin eliminarea tuturor aparițiilor primului cuvânt (împreună cu caracterul `*` corespunzător), păstrând ordinea celorlalte cuvinte.\n\n### Exemplu\n\n**Intrare:**\n```\nbine*albine*foarte*bine*\n```\n\n**Ieșire:**\n```\n*albine*foarte**\n```",
+  "tips": [
+    "Extrage primul cuvânt din șir (până la primul `*`)",
+    "Parcurge șirul și elimină toate aparițiile primului cuvânt urmat de `*`",
+    "Păstrează caracterele `*` la pozițiile corespunzătoare"
+  ]
 }

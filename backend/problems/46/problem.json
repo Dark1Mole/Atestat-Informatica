@@ -1,12 +1,13 @@
 {
   "id": 46,
-  "title": "Prima literă mare",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații (toate literele sunt mici).\n\nSă se afișeze propoziția în care prima literă a fiecărui cuvânt este transformată în majusculă.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Propoziția cu prima literă mare la fiecare cuvânt",
-  "example": {
-    "input": "examen la bacalaureat",
-    "output": "Examen La Bacalaureat"
-  },
-  "difficulty": "easy"
+  "title": "Numărare apariții subșir",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dau două cuvinte `s` și `t` formate din litere mici ale alfabetului englez. Numără de câte ori apare subșirul `t` în șirul `s` (aparițiile pot fi suprapuse).\n\n### Exemplu\n\n**Intrare:**\n```\nabababa\naba\n```\n\n**Ieșire:**\n```\n3\n```",
+  "tips": [
+    "Parcurge șirul și verifică la fiecare poziție dacă începe subșirul căutat",
+    "Atenție la aparițiile suprapuse - după ce găsești o apariție, continuă de la următorul caracter",
+    "Compară caracter cu caracter pentru fiecare poziție de start"
+  ]
 }

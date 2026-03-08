@@ -1,12 +1,13 @@
 {
   "id": 28,
-  "title": "Înlocuire caracter",
-  "description": "Se citește un șir de caractere și două caractere c1 și c2.\n\nSă se afișeze șirul în care toate aparițiile caracterului c1 au fost înlocuite cu caracterul c2.",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie caracterele c1 și c2 separate prin spațiu",
-  "outputFormat": "Șirul cu caracterele înlocuite",
-  "example": {
-    "input": "banana\na o",
-    "output": "bonono"
-  },
-  "difficulty": "easy"
+  "title": "Eliminare prima și ultima literă",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un cuvânt de maximum 20 de litere (cel puțin o literă).\n\n**Cerință:** Afișează cuvântul citit precum și toate cuvintele obținute din cuvântul citit prin eliminarea primei și a ultimei litere. Prima prelucrare se aplică asupra cuvântului citit, iar următoarele asupra cuvântului rezultat la pasul anterior. Procedeul de eliminare și afișare se repetă până când se obține cuvântul vid. Cuvântul inițial și fiecare cuvânt obținut se vor afișa pe câte o linie a ecranului.\n\n### Exemplu\n\n**Intrare:**\n```\nbacalaureat\n```\n\n**Ieșire:**\n```\nbacalaureat\nacalaurea\ncalaure\nalaur\nlau\na\n```",
+  "tips": [
+    "Afișează cuvântul curent",
+    "Elimină primul și ultimul caracter",
+    "Continuă până când lungimea devine 0"
+  ]
 }

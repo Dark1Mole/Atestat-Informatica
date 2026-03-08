@@ -1,12 +1,13 @@
 {
   "id": 47,
-  "title": "Subșir crescător",
-  "description": "Se citește un șir de caractere format doar din litere mici.\n\nSă se verifice dacă caracterele din șir sunt în ordine strict crescătoare (alfabetic).\n\nSe afișează 'DA' dacă sunt în ordine crescătoare, altfel 'NU'.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "'DA' sau 'NU'",
-  "example": {
-    "input": "abcdef",
-    "output": "DA"
-  },
-  "difficulty": "easy"
+  "title": "Cel mai lung prefix comun",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dau două cuvinte formate din litere mici ale alfabetului englez. Găsește și afișează cel mai lung prefix comun al celor două cuvinte. Dacă nu au niciun prefix comun, afișează un șir vid (nimic).\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\ninformare\n```\n\n**Ieșire:**\n```\nforma\n```",
+  "tips": [
+    "Compară caracterele de pe aceeași poziție din cele două șiruri",
+    "Oprește-te când caracterele diferă sau când ajungi la sfârșitul unuia dintre șiruri",
+    "Prefixul comun conține caracterele de la început până la poziția de oprire"
+  ]
 }

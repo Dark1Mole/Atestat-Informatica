@@ -1,12 +1,13 @@
 {
   "id": 23,
-  "title": "Rotire la stânga",
-  "description": "Se citește un șir de caractere și un număr natural k.\n\nSă se afișeze șirul rotit la stânga cu k poziții.\n\nDacă k este mai mare decât lungimea șirului, se rotește cu k mod lungime poziții.",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie numărul k",
-  "outputFormat": "Șirul rotit la stânga",
-  "example": {
-    "input": "abcdef\n2",
-    "output": "cdefab"
-  },
-  "difficulty": "easy"
+  "title": "Litere mici unice",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un text de cel mult 255 de caractere, dintre care cel puțin unul este o literă mică a alfabetului englez.\n\n**Cerință:** Afișează pe o singură linie, despărțite prin câte un spațiu, toate literele mici ale alfabetului englez care apar în text, fiecare literă o singură dată, în ordinea primei ei apariții.\n\n### Exemplu\n\n**Intrare:**\n```\nCalculati valoarea expresiei\n```\n\n**Ieșire:**\n```\na l c u t i v o r e x p s\n```",
+  "tips": [
+    "Folosește un vector boolean pentru a marca literele deja afișate",
+    "Parcurge textul și afișează litera doar dacă nu a fost afișată încă",
+    "Marchează litera ca afișată după prima apariție"
+  ]
 }

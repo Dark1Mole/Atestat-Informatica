@@ -1,12 +1,13 @@
 {
   "id": 24,
-  "title": "Rotire la dreapta",
-  "description": "Se citește un șir de caractere și un număr natural k.\n\nSă se afișeze șirul rotit la dreapta cu k poziții.\n\nDacă k este mai mare decât lungimea șirului, se rotește cu k mod lungime poziții.",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie numărul k",
-  "outputFormat": "Șirul rotit la dreapta",
-  "example": {
-    "input": "abcdef\n2",
-    "output": "efabcd"
-  },
-  "difficulty": "easy"
+  "title": "Cuvinte cu vocale la capete",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un text format din cel mult 200 de litere ale alfabetului englez, în care cuvintele sunt separate printr-un singur spațiu.\n\n**Cerință:** Determină și afișează numărul de cuvinte din textul citit care au atât prima, cât și ultima literă vocală (din mulțimea {a, A, e, E, i, I, o, O, u, U}). Dacă în text nu există un astfel de cuvânt, se va afișa mesajul `NU EXISTA`.\n\n### Exemplu\n\n**Intrare:**\n```\nEratostene a sugerat ca anii bisecti se repeta la fiecare patru ani\n```\n\n**Ieșire:**\n```\n4\n```",
+  "tips": [
+    "Extrage fiecare cuvânt din text",
+    "Verifică dacă prima și ultima literă sunt vocale",
+    "Numără cuvintele care îndeplinesc condiția"
+  ]
 }

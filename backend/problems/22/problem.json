@@ -1,12 +1,13 @@
 {
   "id": 22,
-  "title": "Sufix comun",
-  "description": "Se citesc două șiruri de caractere, fiecare pe câte o linie.\n\nSă se afișeze cel mai lung sufix comun al celor două șiruri.\n\nDacă nu există sufix comun, se afișează un șir vid.",
-  "inputFormat": "Pe prima linie șirul s1\nPe a doua linie șirul s2",
-  "outputFormat": "Sufixul comun sau șirul vid",
-  "example": {
-    "input": "programare\ninformare",
-    "output": "are"
-  },
-  "difficulty": "medium"
+  "title": "Litera mică cea mai frecventă",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir de cel mult 50 de caractere (litere mici și mari ale alfabetului englez, cifre și spații).\n\n**Cerință:** Afișează litera mică cel mai des întâlnită în șirul citit. Dacă există mai multe litere mici cu număr maxim de apariții, se va afișa prima dintre ele în ordine alfabetică. Dacă șirul nu conține litere mici, se va afișa mesajul `nu`.\n\n### Exemplu\n\n**Intrare:**\n```\nmergem la munte\n```\n\n**Ieșire:**\n```\ne\n```",
+  "tips": [
+    "Folosește un vector de frecvență pentru cele 26 de litere mici",
+    "Parcurge vectorul în ordine alfabetică pentru a găsi maximul",
+    "Prima literă cu frecvență maximă este răspunsul"
+  ]
 }

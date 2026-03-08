@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentație Atestat - Mini-pbinfo</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            max-width: 21cm;
+            margin: 2cm auto;
+            padding: 0 1cm;
+        }
+        h1 {
+            text-align: center;
+            font-size: 18pt;
+            margin-bottom: 0.5cm;
+        }
+        h2 {
+            font-size: 14pt;
+            margin-top: 1cm;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.2cm;
+        }
+        h3 {
+            font-size: 12pt;
+            margin-top: 0.5cm;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14pt;
+            margin-bottom: 1cm;
+        }
+        .author {
+            text-align: center;
+            margin-top: 2cm;
+            margin-bottom: 2cm;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            font-size: 10pt;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10pt;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0.5cm 0;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .figure {
+            text-align: center;
+            margin: 0.5cm 0;
+            font-style: italic;
+        }
+        ul, ol {
+            margin-left: 1cm;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ATESTAT PROFESIONAL</h1>
+<p class="subtitle">Aplicație Web pentru Evaluarea Automată a Problemelor de Informatică</p>
+<p class="subtitle"><strong>Mini-pbinfo</strong></p>
+
+<div class="author">
+    <p><strong>Elev:</strong> _____________________</p>
+    <p><strong>Clasa:</strong> _____________________</p>
+    <p><strong>Profesor coordonator:</strong> _____________________</p>
+    <p><strong>Anul școlar:</strong> 2025-2026</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CUPRINS</h2>
+<ol>
+    <li>Introducere</li>
+    <li>Descrierea aplicației</li>
+    <li>Tehnologii utilizate
+        <ul>
+            <li>Frontend (Client)</li>
+            <li>Backend (Server)</li>
+        </ul>
+    </li>
+    <li>Arhitectura aplicației</li>
+    <li>Structura proiectului</li>
+    <li>Funcționalități principale</li>
+    <li>Sistemul de evaluare (Judge)</li>
+    <li>Baza de date cu probleme</li>
+    <li>Interfața utilizator</li>
+    <li>Diagrame și fluxuri</li>
+    <li>Concluzii</li>
+    <li>Bibliografie</li>
+</ol>
+
+<div class="page-break"></div>
+
+<h2>1. INTRODUCERE</h2>
+
+<p><strong>Mini-pbinfo</strong> este o aplicație web educațională destinată învățării și practicării programării în limbajul C++. Aplicația este inspirată de platforma populară pbinfo.ro și oferă un mediu interactiv în care utilizatorii pot rezolva probleme de informatică cu evaluare automată în timp real.</p>
+
+<p>Scopul principal al aplicației este de a oferi elevilor un instrument modern și accesibil pentru pregătirea examenului de Bacalaureat la Informatică, în special pentru subiectul III care implică lucrul cu șiruri de caractere.</p>
+
+<h3>Obiectivele proiectului:</h3>
+<ul>
+    <li>Crearea unei platforme web responsive și intuitive</li>
+    <li>Implementarea unui sistem de evaluare automată a codului C++</li>
+    <li>Oferirea de feedback detaliat pentru fiecare submisie</li>
+    <li>Includerea a 50 de probleme cu șiruri de caractere din programa BAC</li>
+    <li>Suport pentru testare manuală cu input personalizat</li>
+    <li>IntelliSense pentru funcții C++ comune</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>2. DESCRIEREA APLICAȚIEI</h2>
+
+<p>Aplicația funcționează pe modelul client-server, unde:</p>
+
+<ul>
+    <li><strong>Clientul (Frontend)</strong> - rulează în browserul utilizatorului și oferă interfața grafică</li>
+    <li><strong>Serverul (Backend)</strong> - procesează cererile, compilează și evaluează codul trimis</li>
+</ul>
+
+<h3>Fluxul principal de utilizare:</h3>
+<ol>
+    <li>Utilizatorul accesează aplicația în browser la adresa <code>http://localhost:3000</code></li>
+    <li>Selectează o problemă din lista disponibilă</li>
+    <li>Citește enunțul problemei (cerință, format intrare/ieșire, exemple)</li>
+    <li>Scrie soluția în editorul de cod integrat</li>
+    <li>Opțional: testează codul cu input personalizat</li>
+    <li>Trimite soluția pentru evaluare</li>
+    <li>Primește verdictul (Accepted, Wrong Answer, Compile Error, Time Limit Exceeded)</li>
+</ol>
+
+<div class="page-break"></div>
+
+<h2>3. TEHNOLOGII UTILIZATE</h2>
+
+<h3>3.1 Frontend (Client)</h3>
+
+<table>
+    <tr>
+        <th>Tehnologie</th>
+        <th>Versiune</th>
+        <th>Descriere</th>
+    </tr>
+    <tr>
+        <td><strong>React</strong></td>
+        <td>18.x</td>
+        <td>Bibliotecă JavaScript pentru construirea interfețelor utilizator. Permite crearea de componente reutilizabile și gestionarea eficientă a stării aplicației.</td>
+    </tr>
+    <tr>
+        <td><strong>TypeScript</strong></td>
+        <td>5.x</td>
+        <td>Superset al JavaScript care adaugă tipare statice, îmbunătățind calitatea codului și detectarea erorilor în timpul dezvoltării.</td>
+    </tr>
+    <tr>
+        <td><strong>Vite</strong></td>
+        <td>7.x</td>
+        <td>Instrument modern de build pentru aplicații web, oferind timp de pornire rapid și Hot Module Replacement (HMR).</td>
+    </tr>
+    <tr>
+        <td><strong>Tailwind CSS</strong></td>
+        <td>4.x</td>
+        <td>Framework CSS utility-first pentru stilizare rapidă și consistentă, cu suport pentru dark mode.</td>
+    </tr>
+    <tr>
+        <td><strong>Monaco Editor</strong></td>
+        <td>Latest</td>
+        <td>Editorul de cod folosit de Visual Studio Code, integrat în aplicație pentru experiență de programare profesională.</td>
+    </tr>
+    <tr>
+        <td><strong>Lucide React</strong></td>
+        <td>Latest</td>
+        <td>Bibliotecă de iconițe SVG pentru interfața utilizator.</td>
+    </tr>
+    <tr>
+        <td><strong>React Markdown</strong></td>
+        <td>Latest</td>
+        <td>Componentă pentru renderizarea textului Markdown în enunțurile problemelor.</td>
+    </tr>
+</table>
+
+<h3>3.2 Backend (Server)</h3>
+
+<table>
+    <tr>
+        <th>Tehnologie</th>
+        <th>Versiune</th>
+        <th>Descriere</th>
+    </tr>
+    <tr>
+        <td><strong>Node.js</strong></td>
+        <td>20.x+</td>
+        <td>Mediu de execuție JavaScript pe server, bazat pe motorul V8 de la Google Chrome.</td>
+    </tr>
+    <tr>
+        <td><strong>Express.js</strong></td>
+        <td>4.x</td>
+        <td>Framework web minimalist pentru Node.js, folosit pentru crearea API-ului REST.</td>
+    </tr>
+    <tr>
+        <td><strong>G++ (GCC)</strong></td>
+        <td>Latest</td>
+        <td>Compilator C++ folosit pentru compilarea și executarea soluțiilor utilizatorilor.</td>
+    </tr>
+</table>
+
+<h3>3.3 Alte Tehnologii</h3>
+
+<table>
+    <tr>
+        <th>Tehnologie</th>
+        <th>Scop</th>
+    </tr>
+    <tr>
+        <td><strong>JSON</strong></td>
+        <td>Format pentru stocarea problemelor și configurațiilor</td>
+    </tr>
+    <tr>
+        <td><strong>REST API</strong></td>
+        <td>Arhitectură pentru comunicarea client-server</td>
+    </tr>
+    <tr>
+        <td><strong>LocalStorage</strong></td>
+        <td>Salvarea locală a codului și setărilor utilizatorului</td>
+    </tr>
+    <tr>
+        <td><strong>CORS</strong></td>
+        <td>Mecanism pentru permiterea cererilor cross-origin</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>4. ARHITECTURA APLICAȚIEI</h2>
+
+<h3>4.1 Model Client-Server</h3>
+
+<pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                         BROWSER                                  │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │                    React Application                       │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │  │
+│  │  │   Lista     │  │   Editor    │  │    Verdict      │   │  │
+│  │  │  Probleme   │  │   Monaco    │  │    Panel        │   │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────────┘   │  │
+│  └───────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              │ HTTP Requests (REST API)
+                              │ POST /api/submit
+                              │ POST /api/run
+                              │ GET /api/problems
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      NODE.JS SERVER                              │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │                    Express.js                              │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │  │
+│  │  │   Router    │  │   Judge     │  │    Problems     │   │  │
+│  │  │   API       │  │   System    │  │    Loader       │   │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────────┘   │  │
+│  └───────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              │ Filesystem
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    SISTEM DE FIȘIERE                             │
+│  ┌─────────────────┐  ┌─────────────────────────────────────┐   │
+│  │  problems/      │  │  Temporary Files (compilare)        │   │
+│  │  ├── 1/         │  │  • source.cpp                       │   │
+│  │  │   ├── problem.json                                    │   │
+│  │  │   └── tests/ │  │  • executable                       │   │
+│  │  └── 2/...      │  └─────────────────────────────────────┘   │
+│  └─────────────────┘                                             │
+└─────────────────────────────────────────────────────────────────┘
+</pre>
+
+<h3>4.2 Fluxul de Date</h3>
+
+<pre>
+1. ÎNCĂRCARE PROBLEME
+   Client ──GET /api/problems──▶ Server ──citește──▶ problems/*.json
+                                       ◀──────────── returnează lista
+          ◀──────JSON──────────
+
+2. TRIMITERE SOLUȚIE
+   Client ──POST /api/submit──▶ Server
+           {problemId, code}
+                                   │
+                                   ▼
+                            ┌─────────────┐
+                            │  Compilare  │ g++ -std=c++17
+                            └─────────────┘
+                                   │
+                            ┌──────┴──────┐
+                            ▼             ▼
+                         SUCCES        EROARE
+                            │             │
+                            ▼             │
+                    ┌─────────────┐       │
+                    │  Rulare pe  │       │
+                    │   teste     │       │
+                    └─────────────┘       │
+                            │             │
+                            ▼             ▼
+                      ┌───────────────────────┐
+                      │   Verdict JSON        │
+                      │ {verdict, passedTests}│
+                      └───────────────────────┘
+                                   │
+          ◀────────────────────────┘
+</pre>
+
+<div class="page-break"></div>
+
+<h2>5. STRUCTURA PROIECTULUI</h2>
+
+<pre>
+Atestat-Informatica/
+├── package.json              # Configurație proiect principal
+├── README.md                 # Documentație
+│
+├── backend/                  # SERVER
+│   ├── server.js            # Server Express.js
+│   ├── judge.js             # Sistem de evaluare
+│   └── problems/            # Baza de date cu probleme
+│       ├── 1/
+│       │   ├── problem.json # Enunț și configurație
+│       │   └── tests/       # Teste
+│       │       ├── 1.in     # Input test 1
+│       │       ├── 1.out    # Output așteptat test 1
+│       │       ├── 2.in
+│       │       ├── 2.out
+│       │       └── ...
+│       ├── 2/
+│       └── ... (50 probleme)
+│
+├── client/                   # FRONTEND REACT
+│   ├── package.json
+│   ├── tsconfig.json        # Configurație TypeScript
+│   ├── vite.config.ts       # Configurație Vite
+│   ├── index.html
+│   └── src/
+│       ├── main.tsx         # Punct de intrare
+│       ├── App.tsx          # Componenta principală
+│       ├── index.css        # Stiluri globale
+│       ├── components/      # Componente UI
+│       │   └── ui/
+│       │       ├── button.tsx
+│       │       ├── card.tsx
+│       │       ├── badge.tsx
+│       │       └── scroll-area.tsx
+│       └── lib/
+│           └── utils.ts     # Funcții utilitare
+│
+└── frontend/                 # Frontend alternativ (HTML simplu)
+    ├── index.html
+    └── app.js
+</pre>
+
+<div class="page-break"></div>
+
+<h2>6. FUNCȚIONALITĂȚI PRINCIPALE</h2>
+
+<h3>6.1 Editor de Cod</h3>
+<p>Aplicația integrează <strong>Monaco Editor</strong>, același editor folosit de Visual Studio Code:</p>
+<ul>
+    <li>Syntax highlighting pentru C++</li>
+    <li>Numerotare linii</li>
+    <li>Auto-indentare</li>
+    <li>Temă dark mode</li>
+    <li>IntelliSense cu sugestii pentru funcții C++ (toggle on/off)</li>
+</ul>
+
+<h3>6.2 IntelliSense Personalizat</h3>
+<p>Sistemul de autocompletare include:</p>
+<ul>
+    <li><strong>Funcții pentru șiruri:</strong> strlen, strcpy, strcat, strcmp, strchr, strstr, strtok</li>
+    <li><strong>Funcții pentru caractere:</strong> isalpha, isdigit, isupper, islower, toupper, tolower</li>
+    <li><strong>Funcții matematice:</strong> sqrt, pow, abs, ceil, floor</li>
+    <li><strong>Algoritmi STL:</strong> sort, reverse, find, count, max, min</li>
+    <li><strong>Metode container:</strong> push_back, pop_back, size, empty, begin, end</li>
+    <li>Documentație în limba română pentru fiecare funcție</li>
+</ul>
+
+<h3>6.3 Testare Manuală</h3>
+<p>Utilizatorii pot testa codul cu input personalizat înainte de a trimite soluția:</p>
+<ul>
+    <li>Câmp de input pentru date proprii</li>
+    <li>Afișare output în timp real</li>
+    <li>Salvare automată a input-ului în localStorage</li>
+</ul>
+
+<h3>6.4 Salvare Automată</h3>
+<p>Aplicația salvează automat în browserul utilizatorului:</p>
+<ul>
+    <li>Codul sursă pentru fiecare problemă</li>
+    <li>Problema selectată curent</li>
+    <li>Input-ul personalizat pentru testare</li>
+    <li>Setările IntelliSense</li>
+    <li>Numărul de încercări greșite (pentru deblocarea hints)</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>7. SISTEMUL DE EVALUARE (JUDGE)</h2>
+
+<h3>7.1 Procesul de Evaluare</h3>
+
+<pre>
+┌────────────────────────────────────────────────────────────┐
+│                    JUDGE SYSTEM                             │
+├────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. VALIDARE COD                                           │
+│     • Verificare cod gol                                   │
+│     • Verificare dimensiune maximă (100KB)                 │
+│     • Verificare include-uri interzise                     │
+│       (windows.h, thread, filesystem)                      │
+│                                                             │
+│  2. COMPILARE                                              │
+│     Comandă: g++ -o program source.cpp -std=c++17 -O2     │
+│     Timeout: 10 secunde                                    │
+│     Eroare → Compile Error + mesaj explicativ             │
+│                                                             │
+│  3. EXECUȚIE PE TESTE                                      │
+│     Pentru fiecare test (1 → testsCount):                 │
+│     • Citește input din {n}.in                            │
+│     • Rulează programul cu timeout                        │
+│     • Compară output cu {n}.out                           │
+│     • Time Limit: problema.timeLimit (default 2000ms)     │
+│                                                             │
+│  4. VERDICT FINAL                                          │
+│     • Accepted - toate testele trecute                    │
+│     • Wrong Answer - output incorect                      │
+│     • Time Limit Exceeded - depășire timp                 │
+│     • Compile Error - eroare la compilare                 │
+│     • Runtime Error - crash la execuție                   │
+│                                                             │
+└────────────────────────────────────────────────────────────┘
+</pre>
+
+<h3>7.2 Exemple de Verdicte</h3>
+
+<table>
+    <tr>
+        <th>Verdict</th>
+        <th>Cod</th>
+        <th>Descriere</th>
+    </tr>
+    <tr>
+        <td style="color: green;"><strong>Accepted (AC)</strong></td>
+        <td>✓</td>
+        <td>Soluția a trecut toate testele</td>
+    </tr>
+    <tr>
+        <td style="color: red;"><strong>Wrong Answer (WA)</strong></td>
+        <td>✗</td>
+        <td>Output incorect pe cel puțin un test</td>
+    </tr>
+    <tr>
+        <td style="color: orange;"><strong>Time Limit Exceeded (TLE)</strong></td>
+        <td>⏱</td>
+        <td>Programul a depășit limita de timp</td>
+    </tr>
+    <tr>
+        <td style="color: purple;"><strong>Compile Error (CE)</strong></td>
+        <td>⚠</td>
+        <td>Eroare la compilare</td>
+    </tr>
+    <tr>
+        <td style="color: gray;"><strong>Runtime Error (RE)</strong></td>
+        <td>💥</td>
+        <td>Programul a crash-uit (ex: segmentation fault)</td>
+    </tr>
+</table>
+
+<h3>7.3 Cod Sursă Judge (Simplificat)</h3>
+
+<pre>
+async function runJudge(problemId, code) {
+    // 1. Încarcă problema
+    const problem = loadProblem(problemId);
+    
+    // 2. Validare cod
+    if (!code.trim()) return { verdict: 'Compile Error' };
+    
+    // 3. Compilare
+    try {
+        execSync(`g++ -o program source.cpp -std=c++17 -O2`);
+    } catch (err) {
+        return { verdict: 'Compile Error', message: err.stderr };
+    }
+    
+    // 4. Rulare pe teste
+    let passedTests = 0;
+    for (let i = 1; i <= problem.testsCount; i++) {
+        const input = readFile(`tests/${i}.in`);
+        const expected = readFile(`tests/${i}.out`);
+        
+        const output = runProgram(input, problem.timeLimit);
+        
+        if (output === expected) passedTests++;
+        else return { verdict: 'Wrong Answer', passedTests };
+    }
+    
+    return { verdict: 'Accepted', passedTests };
+}
+</pre>
+
+<div class="page-break"></div>
+
+<h2>8. BAZA DE DATE CU PROBLEME</h2>
+
+<h3>8.1 Format Problemă (JSON)</h3>
+
+<pre>
+{
+  "id": 1,
+  "title": "Lungimea șirului",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește un cuvânt...\n\n**Cerință:** Afișează lungimea...",
+  "tips": [
+    "Folosește funcția strlen(s)",
+    "Parcurge șirul până la '\\0'"
+  ]
+}
+</pre>
+
+<h3>8.2 Categorii de Probleme</h3>
+
+<p>Aplicația conține <strong>50 de probleme</strong> organizate pe categorii:</p>
+
+<table>
+    <tr>
+        <th>Nr.</th>
+        <th>Categorie</th>
+        <th>Exemple de probleme</th>
+    </tr>
+    <tr>
+        <td>1-10</td>
+        <td>Operații de bază</td>
+        <td>Lungime șir, numărare vocale/consoane, inversare, palindrom</td>
+    </tr>
+    <tr>
+        <td>11-20</td>
+        <td>Numărări și statistici</td>
+        <td>Suma cifrelor, frecvența caracterelor, caractere distincte</td>
+    </tr>
+    <tr>
+        <td>21-30</td>
+        <td>Manipulare șiruri</td>
+        <td>Prefix, sufix, rotație, subșir, inserare, ștergere</td>
+    </tr>
+    <tr>
+        <td>31-40</td>
+        <td>Prelucrare cuvinte</td>
+        <td>Numărare cuvinte, cel mai lung cuvânt, sortare, cifrul Caesar</td>
+    </tr>
+    <tr>
+        <td>41-50</td>
+        <td>Operații complexe</td>
+        <td>Verificare ordine, litere alternante, subșiruri de vocale</td>
+    </tr>
+</table>
+
+<h3>8.3 Structura Testelor</h3>
+
+<p>Fiecare problemă are <strong>5 teste</strong>:</p>
+<ul>
+    <li><code>1.in</code> - input pentru testul 1</li>
+    <li><code>1.out</code> - output așteptat pentru testul 1</li>
+    <li>... (până la 5.in, 5.out)</li>
+</ul>
+
+<p><strong>Exemplu test pentru problema "Lungimea șirului":</strong></p>
+<table>
+    <tr>
+        <th>Fișier</th>
+        <th>Conținut</th>
+    </tr>
+    <tr>
+        <td>1.in</td>
+        <td><code>informatica</code></td>
+    </tr>
+    <tr>
+        <td>1.out</td>
+        <td><code>11</code></td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>9. INTERFAȚA UTILIZATOR</h2>
+
+<h3>9.1 Layout Principal</h3>
+
+<pre>
+┌─────────────────────────────────────────────────────────────────────┐
+│  Mini-pbinfo                              Atestat Informatică • C++ │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌─────────────────┐    ┌─────────────────────────────────────────┐│
+│  │   PROBLEME      │    │            EDITOR C++                   ││
+│  │                 │    │  ┌─────────────────────────────────────┐││
+│  │  #1 Lungimea    │    │  │  [Trimite] [IntelliSense] [Reset]  │││
+│  │  #2 Vocale      │    │  ├─────────────────────────────────────┤││
+│  │  #3 Consoane    │    │  │  1 │ #include <iostream>           │││
+│  │  #4 Inversare   │    │  │  2 │ using namespace std;          │││
+│  │  ...            │    │  │  3 │                               │││
+│  │                 │    │  │  4 │ int main() {                  │││
+│  └─────────────────┘    │  │  5 │     char s[101];              │││
+│                         │  │  6 │     cin >> s;                  │││
+│  ┌─────────────────┐    │  │  7 │     cout << strlen(s);        │││
+│  │   ENUNȚ         │    │  │  8 │     return 0;                 │││
+│  │                 │    │  │  9 │ }                             │││
+│  │ **Cerință:**    │    │  └─────────────────────────────────────┘││
+│  │ Afișează        │    └─────────────────────────────────────────┘│
+│  │ lungimea...     │                                               │
+│  │                 │    ┌─────────────────────────────────────────┐│
+│  │ **Intrare:**    │    │        TESTARE MANUALĂ                  ││
+│  │ Un cuvânt       │    │  ┌───────────────┐  ┌─────────────────┐ ││
+│  │                 │    │  │ Input (cin)   │  │ Output (cout)   │ ││
+│  │ **Ieșire:**     │    │  │ informatica   │  │ 11              │ ││
+│  │ Lungimea        │    │  └───────────────┘  └─────────────────┘ ││
+│  └─────────────────┘    │                          [Rulează]      ││
+│                         └─────────────────────────────────────────┘│
+│                                                                     │
+│                         ┌─────────────────────────────────────────┐│
+│                         │           VERDICT                       ││
+│                         │  ✓ Accepted          5/5 teste trecute  ││
+│                         └─────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────────┘
+</pre>
+
+<h3>9.2 Componente UI</h3>
+
+<table>
+    <tr>
+        <th>Componentă</th>
+        <th>Descriere</th>
+    </tr>
+    <tr>
+        <td><strong>Card</strong></td>
+        <td>Container pentru secțiuni (probleme, enunț, editor, verdict)</td>
+    </tr>
+    <tr>
+        <td><strong>Button</strong></td>
+        <td>Butoane pentru acțiuni (Trimite, Rulează, Reset, IntelliSense)</td>
+    </tr>
+    <tr>
+        <td><strong>Badge</strong></td>
+        <td>Etichetă pentru verdict (colorată diferit: verde/roșu/galben)</td>
+    </tr>
+    <tr>
+        <td><strong>ScrollArea</strong></td>
+        <td>Zonă scrollabilă pentru liste lungi</td>
+    </tr>
+    <tr>
+        <td><strong>Monaco Editor</strong></td>
+        <td>Editor de cod cu syntax highlighting</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>10. DIAGRAME ȘI FLUXURI</h2>
+
+<h3>10.1 Diagrama de Secvență - Trimitere Soluție</h3>
+
+<pre>
+  Utilizator          Client (React)              Server              Judge
+      │                    │                        │                   │
+      │  Click "Trimite"   │                        │                   │
+      │───────────────────▶│                        │                   │
+      │                    │                        │                   │
+      │                    │  POST /api/submit      │                   │
+      │                    │  {problemId, code}     │                   │
+      │                    │───────────────────────▶│                   │
+      │                    │                        │                   │
+      │                    │                        │  runJudge()       │
+      │                    │                        │──────────────────▶│
+      │                    │                        │                   │
+      │                    │                        │                   │ Compilare
+      │                    │                        │                   │──────┐
+      │                    │                        │                   │      │
+      │                    │                        │                   │◀─────┘
+      │                    │                        │                   │
+      │                    │                        │                   │ Rulare teste
+      │                    │                        │                   │──────┐
+      │                    │                        │                   │      │
+      │                    │                        │                   │◀─────┘
+      │                    │                        │                   │
+      │                    │                        │◀──────────────────│
+      │                    │                        │  {verdict, tests} │
+      │                    │                        │                   │
+      │                    │◀───────────────────────│                   │
+      │                    │       JSON Response    │                   │
+      │                    │                        │                   │
+      │◀───────────────────│                        │                   │
+      │  Afișare verdict   │                        │                   │
+      │                    │                        │                   │
+</pre>
+
+<h3>10.2 Diagrama de Stare - Verdict</h3>
+
+<pre>
+                    ┌──────────────┐
+                    │   IDLE       │
+                    │  (așteptare) │
+                    └──────┬───────┘
+                           │ Click "Trimite"
+                           ▼
+                    ┌──────────────┐
+                    │   LOADING    │
+                    │  (se rulează)│
+                    └──────┬───────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+       ┌──────────┐ ┌──────────┐ ┌──────────┐
+       │ ACCEPTED │ │  WRONG   │ │ COMPILE  │
+       │   (AC)   │ │  ANSWER  │ │  ERROR   │
+       └──────────┘ └──────────┘ └──────────┘
+              │            │            │
+              └────────────┼────────────┘
+                           │ Nouă submisie
+                           ▼
+                    ┌──────────────┐
+                    │   IDLE       │
+                    └──────────────┘
+</pre>
+
+<div class="page-break"></div>
+
+<h2>11. CONCLUZII</h2>
+
+<h3>11.1 Realizări</h3>
+
+<p>Proiectul <strong>Mini-pbinfo</strong> a atins toate obiectivele propuse:</p>
+
+<ul>
+    <li>✓ Platformă web funcțională și responsivă</li>
+    <li>✓ Sistem de evaluare automată precis și rapid</li>
+    <li>✓ 50 de probleme complete cu teste și soluții</li>
+    <li>✓ Editor profesional cu IntelliSense</li>
+    <li>✓ Feedback detaliat pentru utilizatori</li>
+    <li>✓ Salvare automată a progresului</li>
+</ul>
+
+<h3>11.2 Competențe Dobândite</h3>
+
+<p>În realizarea acestui proiect am aprofundat cunoștințele în:</p>
+
+<ul>
+    <li><strong>Dezvoltare Frontend:</strong> React, TypeScript, CSS modern (Tailwind)</li>
+    <li><strong>Dezvoltare Backend:</strong> Node.js, Express, API REST</li>
+    <li><strong>Sisteme de Build:</strong> Vite, npm, module bundling</li>
+    <li><strong>Programare C++:</strong> Compilare, execuție, manipulare procese</li>
+    <li><strong>Arhitectură Software:</strong> Model client-server, separarea responsabilităților</li>
+    <li><strong>UX/UI Design:</strong> Interfețe intuitive, feedback vizual</li>
+</ul>
+
+<h3>11.3 Îmbunătățiri Viitoare</h3>
+
+<ul>
+    <li>Sistem de autentificare și conturi utilizator</li>
+    <li>Clasament și sistem de puncte</li>
+    <li>Mai multe limbaje de programare (Python, Java)</li>
+    <li>Probleme cu dificultate variabilă</li>
+    <li>Sistem de concursuri</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>12. BIBLIOGRAFIE</h2>
+
+<ol>
+    <li><strong>React Documentation</strong> - https://react.dev/</li>
+    <li><strong>TypeScript Handbook</strong> - https://www.typescriptlang.org/docs/</li>
+    <li><strong>Node.js Documentation</strong> - https://nodejs.org/docs/</li>
+    <li><strong>Express.js Guide</strong> - https://expressjs.com/</li>
+    <li><strong>Tailwind CSS</strong> - https://tailwindcss.com/docs</li>
+    <li><strong>Monaco Editor</strong> - https://microsoft.github.io/monaco-editor/</li>
+    <li><strong>Vite</strong> - https://vite.dev/</li>
+    <li><strong>pbinfo.ro</strong> - Inspirație pentru structura problemelor</li>
+    <li><strong>Programa BAC Informatică</strong> - edu.ro</li>
+</ol>
+
+<hr>
+<p style="text-align: center; font-style: italic; margin-top: 2cm;">
+    Documentație generată pentru proiectul de Atestat Profesional<br>
+    Anul școlar 2025-2026
+</p>
+
+</body>
+</html>

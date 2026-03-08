@@ -1,12 +1,13 @@
 {
   "id": 14,
-  "title": "Frecvența unui caracter",
-  "description": "Se citește un șir de caractere și un caracter c.\n\nSă se afișeze de câte ori apare caracterul c în șir.",
-  "inputFormat": "Pe prima linie un șir de caractere s (1 ≤ |s| ≤ 1000)\nPe a doua linie caracterul c",
-  "outputFormat": "Numărul de apariții ale caracterului c",
-  "example": {
-    "input": "informatica\na",
-    "output": "3"
-  },
-  "difficulty": "easy"
+  "title": "Înlocuire vocale",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se consideră un text format doar din spații și litere mici ale alfabetului englez, care începe cu o literă și care conține cel puțin o vocală din mulțimea {a, e, i, o, u}.\n\n**Cerință:** Se citește un șir de cel mult 100 de caractere. Înlocuiește fiecare vocală din text cu litera imediat următoare din alfabet (a se înlocuiește cu b, e cu f, i cu j, o cu p, u cu v). Afișează șirul obținut.\n\n### Exemplu\n\n**Intrare:**\n```\nexamen de bacalaureat\n```\n\n**Ieșire:**\n```\nfxbmfn df bbcblbvrfbt\n```",
+  "tips": [
+    "Parcurge șirul caracter cu caracter",
+    "Dacă e vocală, înlocuiește cu caracterul următor (c+1)",
+    "Spațiile rămân nemodificate"
+  ]
 }

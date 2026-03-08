@@ -1,12 +1,13 @@
 {
   "id": 13,
-  "title": "Caracter minim",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze caracterul cu codul ASCII cel mai mic din șir.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Caracterul cu codul ASCII minim",
-  "example": {
-    "input": "informatica",
-    "output": "a"
-  },
-  "difficulty": "easy"
+  "title": "Eliminare succesivă litere",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un șir de cel mult 40 de caractere, format doar din litere ale alfabetului englez.\n\n**Cerință:** Afișează toate șirurile obținute prin eliminarea succesivă a câte unei singure litere din șirul citit. Șirurile se vor afișa câte unul pe câte o linie a ecranului.\n\n### Exemplu\n\n**Intrare:**\n```\nabbc\n```\n\n**Ieșire:**\n```\nbbc\nabc\nabc\nabb\n```",
+  "tips": [
+    "Pentru fiecare poziție i, construiește șirul fără caracterul de pe poziția i",
+    "Afișează fiecare șir pe o linie separată",
+    "Ai nevoie de n șiruri, unde n este lungimea șirului original"
+  ]
 }

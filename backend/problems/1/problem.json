@@ -1,13 +1,13 @@
 {
   "id": 1,
-  "title": "Lungimea șirului",
+  "title": "Eliminare litere mici",
   "category": "Șiruri de caractere",
   "timeLimit": 1000,
   "testsCount": 5,
-  "statement": "Se citește un cuvânt format doar din litere mici ale alfabetului englez.\n\n**Cerință:** Afișează lungimea cuvântului.\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\n```\n\n**Ieșire:**\n```\n11\n```",
+  "description": "Se citește de la tastatură un cuvânt format din cel mult 20 de caractere, doar litere ale alfabetului englez.\n\n**Cerință:** Transformă cuvântul citit prin eliminarea fiecărei litere mici, restul literelor nemodificându-se. Afișează cuvântul obținut. Dacă în cuvânt apar numai litere mici, se va afișa mesajul `CUVANT VID`.\n\n### Exemple\n\n**Intrare:**\n```\nbaCALaUreaT\n```\n\n**Ieșire:**\n```\nCALUT\n```\n\n**Intrare:**\n```\nvara\n```\n\n**Ieșire:**\n```\nCUVANT VID\n```",
   "tips": [
-    "Folosește funcția `strlen(s)` din `<cstring>`",
-    "Parcurge șirul până la caracterul `'\\0'`",
-    "Declară șirul suficient de mare: `char s[1001];`"
+    "Verifică dacă un caracter este literă mare cu `c >= 'A' && c <= 'Z'`",
+    "Construiește un nou șir cu literele mari",
+    "Verifică lungimea șirului rezultat pentru a decide dacă afișezi mesajul"
   ]
 }

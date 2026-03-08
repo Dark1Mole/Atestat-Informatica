@@ -1,12 +1,13 @@
 {
   "id": 31,
-  "title": "Numărare cuvinte",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze numărul de cuvinte din propoziție.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Numărul de cuvinte",
-  "example": {
-    "input": "informatica este frumoasa",
-    "output": "3"
-  },
-  "difficulty": "easy"
+  "title": "Inserare * după vocale",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un text cu cel mult 100 de caractere (litere ale alfabetului englez și spații).\n\n**Cerință:** Construiește și afișează șirul de caractere obținut din șirul inițial prin inserarea caracterului `*` după fiecare vocală. Se consideră vocale literele a, e, i, o, u, A, E, I, O, U. Dacă textul citit nu conține vocale, se va afișa mesajul `FARA VOCALE`.\n\n### Exemplu\n\n**Intrare:**\n```\nExamenul de bacalaureat\n```\n\n**Ieșire:**\n```\nE*xa*me*nu*l de* ba*ca*la*u*re*a*t\n```",
+  "tips": [
+    "Parcurge textul caracter cu caracter",
+    "Adaugă fiecare caracter la rezultat",
+    "Dacă e vocală, adaugă și `*` după el"
+  ]
 }

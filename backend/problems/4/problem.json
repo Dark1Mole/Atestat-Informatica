@@ -1,12 +1,13 @@
 {
   "id": 4,
-  "title": "Inversare șir",
-  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul inversat (oglindit).",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul inversat",
-  "example": {
-    "input": "bac",
-    "output": "cab"
-  },
-  "difficulty": "easy"
+  "title": "Perechi de litere identice",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se consideră un text alcătuit din cel mult 250 de caractere, în care cuvintele sunt formate doar din litere mici ale alfabetului englez și sunt separate prin unul sau mai multe caractere `*`.\n\n**Cerință:** Afișează pe câte o linie toate secvențele formate din câte două litere identice, în ordinea apariției lor în text.\n\n### Exemplu\n\n**Intrare:**\n```\ncopiii*sunt*la***zoo\n```\n\n**Ieșire:**\n```\nii\nii\noo\n```",
+  "tips": [
+    "Parcurge șirul și compară caracterul curent cu următorul",
+    "Dacă sunt identice și sunt litere, afișează perechea",
+    "Atenție la caracterele `*` care nu trebuie afișate"
+  ]
 }

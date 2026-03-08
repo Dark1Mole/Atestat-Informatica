@@ -1,12 +1,13 @@
 {
   "id": 6,
-  "title": "Majuscule în minuscule",
-  "description": "Se citește un șir de caractere format doar din litere mari și mici ale alfabetului englez.\n\nSă se afișeze șirul în care toate literele mari au fost transformate în litere mici.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul transformat în litere mici",
-  "example": {
-    "input": "InFoRmAtIcA",
-    "output": "informatica"
-  },
-  "difficulty": "easy"
+  "title": "Clone ale cuvantului",
+  "category": "Siruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se spune ca un sir de caractere `s2` este clona sirului de caractere `s1` daca se poate obtine din `s1` prin eliminarea tuturor aparitiilor unei singure vocale. Se considera vocala orice litera din multimea (a, e, i, o, u).\n\n**Cerinta:** Se citeste un cuvant format din cel mult 20 de litere mici ale alfabetului englez. Afiseaza toate clonele acestui cuvant, fiecare pe cate o linie a ecranului.\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\n```\n\n**Iesire:**\n```\nnformatca\ninfrmatica\ninformtic\n```",
+  "tips": [
+    "Pentru fiecare vocala din (a, e, i, o, u) verifica daca apare in cuvant",
+    "Daca apare, construieste clona eliminand toate aparitiile acelei vocale",
+    "Afiseaza doar clonele pentru vocalele care exista in cuvant"
+  ]
 }

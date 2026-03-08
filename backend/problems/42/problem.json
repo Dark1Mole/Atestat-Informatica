@@ -1,12 +1,13 @@
 {
   "id": 42,
-  "title": "Eliminare duplicate consecutive",
-  "description": "Se citește un șir de caractere.\n\nSă se afișeze șirul din care au fost eliminate caracterele consecutive duplicate (se păstrează doar o apariție).",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul fără duplicate consecutive",
-  "example": {
-    "input": "aabbccaabb",
-    "output": "abcab"
-  },
-  "difficulty": "easy"
+  "title": "Sortare cuvinte alfabetic",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dă o propoziție formată din mai multe cuvinte separate prin câte un spațiu. Cuvintele sunt formate doar din litere mici ale alfabetului englez. Afișează cuvintele sortate în ordine alfabetică (lexicografică), separate prin câte un spațiu.\n\n### Exemplu\n\n**Intrare:**\n```\nmare soare luna stea\n```\n\n**Ieșire:**\n```\nluna mare soare stea\n```",
+  "tips": [
+    "Extrage cuvintele din propoziție într-un vector",
+    "Sortează vectorul alfabetic folosind comparația de șiruri",
+    "Compară caracter cu caracter pentru sortare lexicografică"
+  ]
 }

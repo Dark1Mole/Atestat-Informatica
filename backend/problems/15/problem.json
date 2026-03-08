@@ -1,12 +1,13 @@
 {
   "id": 15,
-  "title": "Ștergere vocale",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze șirul din care au fost eliminate toate vocalele.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul fără vocale",
-  "example": {
-    "input": "informatica",
-    "output": "nfrmtc"
-  },
-  "difficulty": "easy"
+  "title": "Eliminare consoane",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Un cuvânt de cel mult 20 de caractere, format doar din litere mici ale alfabetului englez, conține cel puțin o consoană.\n\n**Cerință:** Se citește cuvântul și se afișează cuvântul obținut prin eliminarea tuturor consoanelor. Se consideră consoană orice literă care nu se află în mulțimea {a, e, i, o, u}.\n\n### Exemplu\n\n**Intrare:**\n```\nbacalaureat\n```\n\n**Ieșire:**\n```\naaauea\n```",
+  "tips": [
+    "Parcurge șirul și păstrează doar vocalele",
+    "Construiește un nou șir cu literele care sunt vocale",
+    "Verifică dacă caracterul este a, e, i, o sau u"
+  ]
 }

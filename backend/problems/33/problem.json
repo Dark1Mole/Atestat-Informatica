@@ -1,12 +1,13 @@
 {
   "id": 33,
-  "title": "Cel mai scurt cuvânt",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze cel mai scurt cuvânt din propoziție.\n\nDacă există mai multe cuvinte de lungime minimă, se afișează primul.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Cel mai scurt cuvânt",
-  "example": {
-    "input": "informatica e frumoasa",
-    "output": "e"
-  },
-  "difficulty": "medium"
+  "title": "Litera din mijloc",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Variabila `cuv` reține un cuvânt format din cel mult 25 de litere mici ale alfabetului englez.\n\n**Cerință:** Citește cuvântul și afișează: litera din mijloc a cuvântului, dacă acesta are un număr impar de caractere; cele două litere din mijloc, dacă acesta are un număr par de caractere.\n\n### Exemplu\n\n**Intrare:**\n```\nmihai\n```\n\n**Ieșire:**\n```\nh\n```",
+  "tips": [
+    "Determină lungimea cuvântului",
+    "Dacă lungimea e impară, mijlocul e la poziția n/2",
+    "Dacă lungimea e pară, cele două caractere din mijloc sunt la pozițiile n/2-1 și n/2"
+  ]
 }

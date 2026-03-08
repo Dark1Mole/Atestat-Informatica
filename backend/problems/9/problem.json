@@ -1,12 +1,13 @@
 {
   "id": 9,
-  "title": "Ultima vocală",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze poziția (indexată de la 0) ultimei vocale din șir.\n\nDacă nu există nicio vocală, se afișează -1.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Poziția ultimei vocale sau -1",
-  "example": {
-    "input": "informatica",
-    "output": "10"
-  },
-  "difficulty": "easy"
+  "title": "Prima și ultima literă majusculă",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Un șir cu maximum 255 de caractere conține cuvinte separate prin unul sau mai multe spații, formate numai din litere mici ale alfabetului englez.\n\n**Cerință:** Afișează șirul modificat, astfel încât prima și ultima literă a fiecărui cuvânt să fie afișată ca literă mare.\n\n### Exemplu\n\n**Intrare:**\n```\nmaine este proba la informatica\n```\n\n**Ieșire:**\n```\nMainE EstE ProbA LA InformaticA\n```",
+  "tips": [
+    "Identifică începutul și sfârșitul fiecărui cuvânt",
+    "Pentru cuvinte cu o singură literă, doar aceasta devine majusculă",
+    "Transformă în majusculă cu `c - 'a' + 'A'`"
+  ]
 }

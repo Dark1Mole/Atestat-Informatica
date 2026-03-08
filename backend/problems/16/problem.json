@@ -1,12 +1,13 @@
 {
   "id": 16,
-  "title": "Ștergere consoane",
-  "description": "Se citește un șir de caractere format doar din litere mici ale alfabetului englez.\n\nSă se afișeze șirul din care au fost eliminate toate consoanele.",
-  "inputFormat": "Un șir de caractere s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Șirul fără consoane",
-  "example": {
-    "input": "informatica",
-    "output": "ioaia"
-  },
-  "difficulty": "easy"
+  "title": "Eliminare prima și ultima vocală",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un cuvânt de cel mult 20 de litere mici ale alfabetului englez.\n\n**Cerință:** Construiește și afișează cuvântul obținut din cuvântul citit după eliminarea primei și a ultimei vocale. Se garantează că cuvântul conține cel puțin două vocale. Se consideră vocale literele a, e, i, o, u.\n\n### Exemplu\n\n**Intrare:**\n```\nbacalaureat\n```\n\n**Ieșire:**\n```\nbcalauret\n```",
+  "tips": [
+    "Găsește poziția primei vocale (parcurgând de la început)",
+    "Găsește poziția ultimei vocale (parcurgând de la sfârșit)",
+    "Construiește șirul fără caracterele de pe aceste poziții"
+  ]
 }

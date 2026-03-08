@@ -1,12 +1,13 @@
 {
   "id": 40,
-  "title": "Criptare Caesar",
-  "description": "Se citește un șir de caractere format doar din litere mici și un număr k.\n\nSă se afișeze șirul criptat folosind cifrul Caesar: fiecare literă se înlocuiește cu litera aflată la k poziții mai departe în alfabet.\n\nDupă 'z' urmează 'a' (circular).",
-  "inputFormat": "Pe prima linie șirul s\nPe a doua linie numărul k (0 ≤ k ≤ 25)",
-  "outputFormat": "Șirul criptat",
-  "example": {
-    "input": "abc\n3",
-    "output": "def"
-  },
-  "difficulty": "medium"
+  "title": "Cel mai scurt cuvânt",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dă o propoziție formată din mai multe cuvinte separate prin câte un spațiu. Cuvintele sunt formate doar din litere mici ale alfabetului englez. Afișează cel mai scurt cuvânt din propoziție. Dacă există mai multe cuvinte de lungime minimă, afișează primul dintre ele.\n\n### Exemplu\n\n**Intrare:**\n```\neu invat informatica la liceu\n```\n\n**Ieșire:**\n```\neu\n```",
+  "tips": [
+    "Extrage cuvintele din propoziție folosind separatorul spațiu",
+    "Inițializează lungimea minimă cu lungimea primului cuvânt",
+    "Compară lungimea fiecărui cuvânt cu lungimea minimă găsită"
+  ]
 }

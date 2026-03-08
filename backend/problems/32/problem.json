@@ -1,12 +1,13 @@
 {
   "id": 32,
-  "title": "Cel mai lung cuvânt",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze cel mai lung cuvânt din propoziție.\n\nDacă există mai multe cuvinte de lungime maximă, se afișează primul.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Cel mai lung cuvânt",
-  "example": {
-    "input": "bac informatica test",
-    "output": "informatica"
-  },
-  "difficulty": "medium"
+  "title": "Interschimbare consoană-vocală",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Se citește de la tastatură un cuvânt cu cel puțin una și cel mult 20 de litere ale alfabetului englez.\n\n**Cerință:** Construiește și afișează cuvântul obținut prin interschimbarea primei consoane cu ultima vocală din cuvânt. În cazul în care cuvântul este format numai din vocale sau numai din consoane, afișează mesajul `IMPOSIBIL`. Se consideră vocale literele a, e, i, o, u, A, E, I, O, U.\n\n### Exemplu\n\n**Intrare:**\n```\nMarmorat\n```\n\n**Ieșire:**\n```\naarmorMt\n```",
+  "tips": [
+    "Găsește poziția primei consoane (parcurgând de la început)",
+    "Găsește poziția ultimei vocale (parcurgând de la sfârșit)",
+    "Interschimbă caracterele de pe aceste poziții"
+  ]
 }

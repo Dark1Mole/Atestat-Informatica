@@ -1,12 +1,13 @@
 {
   "id": 45,
-  "title": "Inversare fiecare cuvânt",
-  "description": "Se citește o propoziție formată din cuvinte separate prin spații.\n\nSă se afișeze propoziția în care fiecare cuvânt a fost inversat, dar ordinea cuvintelor rămâne aceeași.",
-  "inputFormat": "O propoziție s (1 ≤ |s| ≤ 1000)",
-  "outputFormat": "Propoziția cu cuvinte inversate",
-  "example": {
-    "input": "bac la informatica",
-    "output": "cab al acitamrofni"
-  },
-  "difficulty": "medium"
+  "title": "Înlocuire subșir",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "**Cerință:** Se dau trei cuvinte `s`, `vechi` și `nou` formate din litere mici ale alfabetului englez. Înlocuiește prima apariție a subșirului `vechi` din `s` cu subșirul `nou`. Dacă subșirul `vechi` nu apare în `s`, afișează șirul `s` nemodificat.\n\n### Exemplu\n\n**Intrare:**\n```\ninformatica\nforma\nstructura\n```\n\n**Ieșire:**\n```\ninstructuratica\n```",
+  "tips": [
+    "Găsește poziția la care apare subșirul `vechi` în `s`",
+    "Construiește noul șir concatenând: prefixul + `nou` + sufixul",
+    "Dacă subșirul nu apare, afișează șirul original"
+  ]
 }
