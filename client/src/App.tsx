@@ -144,7 +144,7 @@ function App() {
     try {
       window.localStorage.setItem(
         "miniPbinfo.savedSolutions",
-        JSON.stringify(savedSolutions)
+        JSON.stringify(savedSolutions),
       );
     } catch {
       // ignore
@@ -300,15 +300,18 @@ function App() {
   };
 
   // Get saves for current problem
-  const currentSaves = selectedId != null ? (savedSolutions[selectedId] || []) : [];
+  const currentSaves =
+    selectedId != null ? savedSolutions[selectedId] || [] : [];
 
   // Save current solution
   const handleSaveSolution = () => {
     if (!selectedId || !code.trim()) return;
     const name = saveName.trim() || `Salvare ${currentSaves.length + 1}`;
-    
+
     if (currentSaves.length >= MAX_SAVES_PER_PROBLEM) {
-      alert(`Maxim ${MAX_SAVES_PER_PROBLEM} salvari per problema. Sterge una pentru a salva alta.`);
+      alert(
+        `Maxim ${MAX_SAVES_PER_PROBLEM} salvari per problema. Sterge una pentru a salva alta.`,
+      );
       return;
     }
 
@@ -1331,6 +1334,104 @@ function App() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Saved Solutions Section */}
+            {selectedId && (
+              <Card>
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      Salvări ({currentSaves.length}/{MAX_SAVES_PER_PROBLEM})
+                    </CardTitle>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setShowSaves((v) => !v)}
+                    >
+                      <FolderOpen className="size-4 mr-1" />
+                      {showSaves ? "Ascunde" : "Arată"}
+                    </Button>
+                  </div>
+                </CardHeader>
+                {showSaves && (
+                  <CardContent className="pt-0 space-y-3">
+                    {/* Save new solution */}
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={saveName}
+                        onChange={(e) => setSaveName(e.target.value)}
+                        placeholder="Nume salvare (opțional)..."
+                        className="flex-1 px-3 py-1.5 rounded-md border border-border bg-muted/30 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        maxLength={30}
+                      />
+                      <Button
+                        onClick={handleSaveSolution}
+                        disabled={
+                          !code.trim() ||
+                          currentSaves.length >= MAX_SAVES_PER_PROBLEM
+                        }
+                        size="sm"
+                        variant="outline"
+                      >
+                        <Save className="size-4 mr-1" />
+                        Salvează
+                      </Button>
+                    </div>
+
+                    {/* List of saved solutions */}
+                    {currentSaves.length === 0 ? (
+                      <p className="text-sm text-muted-foreground text-center py-2">
+                        Nicio salvare pentru această problemă.
+                      </p>
+                    ) : (
+                      <div className="space-y-2">
+                        {currentSaves.map((save) => (
+                          <div
+                            key={save.id}
+                            className="flex items-center justify-between gap-2 p-2 rounded-md border border-border/60 bg-card/40 hover:bg-accent/30 transition-colors"
+                          >
+                            <div className="flex-1 min-w-0">
+                              <div className="text-sm font-medium truncate">
+                                {save.name}
+                              </div>
+                              <div className="text-xs text-muted-foreground">
+                                {formatDate(save.timestamp)}
+                              </div>
+                            </div>
+                            <div className="flex gap-1">
+                              <Button
+                                onClick={() => handleLoadSolution(save)}
+                                size="sm"
+                                variant="ghost"
+                                className="h-8 px-2"
+                                title="Încarcă salvarea"
+                              >
+                                <FolderOpen className="size-4" />
+                              </Button>
+                              <Button
+                                onClick={() => handleDeleteSolution(save.id)}
+                                size="sm"
+                                variant="ghost"
+                                className="h-8 px-2 text-destructive hover:text-destructive"
+                                title="Șterge salvarea"
+                              >
+                                <Trash2 className="size-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="text-xs text-muted-foreground">
+                      Salvările sunt păstrate local în browser.
+                    </p>
+                  </CardContent>
+                )}
+              </Card>
+            )}
 
             {verdict && (
               <Card
