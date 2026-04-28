@@ -1322,9 +1322,10 @@ function App() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="rounded-lg border border-border overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[320px]">
+                <div className="w-full rounded-lg border border-border overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[320px]">
                   <Editor
                     height="200px"
+                    width="100%"
                     defaultLanguage="cpp"
                     value={code}
                     onChange={(v) => setCode(v ?? "")}
