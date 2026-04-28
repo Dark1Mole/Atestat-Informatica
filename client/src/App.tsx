@@ -39,7 +39,7 @@ const listItem = {
   animate: { opacity: 1, x: 0 },
 };
 
-const API = "/api";
+const API = (import.meta.env.VITE_API_URL ?? "/api").replace(/\/$/, "");
 
 type Problem = {
   id: number;

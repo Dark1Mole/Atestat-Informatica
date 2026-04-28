@@ -99,3 +99,41 @@ Enunțurile suportă Markdown simplu:
 - **Wrong Answer** – output incorect
 - **Time Limit Exceeded** – depășire timp
 - **Compile Error** – eroare la compilare
+
+## Deployment
+
+### Local Development
+
+```bash
+npm install
+cd client && npm install && cd ..
+npm run dev:client      # Terminal 1: frontend on http://localhost:5173
+npm start               # Terminal 2: backend on http://localhost:3000
+```
+
+Frontend proxy automatically forwards `/api` calls to the backend.
+
+### Production Deployment
+
+**Architecture:** Frontend on Vercel + Backend on Render
+
+1. **Frontend (Vercel):**
+   - Already configured in `vercel.json` and `client/vite.config.ts`
+   - Redeploy: `vercel --prod`
+
+2. **Backend (Render):**
+   - See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for step-by-step instructions
+   - TL;DR: Create Render Web Service pointing to this repo, set Start Command to `node backend/server.js`
+
+3. **Connect them:**
+   - Get your Render backend URL (e.g., `https://atestat-backend-xxxx.onrender.com`)
+   - Set `VITE_API_URL` env var in Vercel to that URL
+   - Redeploy Vercel frontend
+
+### Why Local Dev Works, But Production Doesn't (Without This)
+
+- **Local:** Vite proxy in `client/vite.config.ts` redirects `/api` calls to `http://localhost:3000`
+- **Production:** Vercel frontend has no backend unless you deploy one separately
+- **Solution:** Frontend reads `VITE_API_URL` to call the production backend URL
+
+See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for full deployment guide.
