@@ -90,8 +90,44 @@ app.post('/api/submit', async (req, res) => {
   }
 });
 
+// Compatibilitate: permite și accesul direct la /submit
+app.post('/submit', async (req, res) => {
+  const { problemId, code } = req.body;
+
+  if (!problemId || !code) {
+    return res.status(400).json({ error: 'problemId și code sunt obligatorii' });
+  }
+
+  try {
+    const result = await runJudge(problemId, code);
+    logSubmission(problemId, result);
+    res.json(result);
+  } catch (err) {
+    console.error('Judge error:', err);
+    res.status(500).json({ error: 'Eroare la evaluare', verdict: 'Internal Error' });
+  }
+});
+
 // Rulează cod cu input custom (fără testare pe teste)
 app.post('/api/run', async (req, res) => {
+  const { code, input } = req.body;
+
+  if (!code) {
+    return res.status(400).json({ error: 'code este obligatoriu' });
+  }
+
+  try {
+    const { runWithCustomInput } = require('./judge');
+    const result = await runWithCustomInput(code, input || '');
+    res.json(result);
+  } catch (err) {
+    console.error('Run error:', err);
+    res.status(500).json({ error: 'Eroare la rulare', output: '', success: false });
+  }
+});
+
+// Compatibilitate: permite și accesul direct la /run
+app.post('/run', async (req, res) => {
   const { code, input } = req.body;
 
   if (!code) {
