@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api';
+const API = window.API_BASE_URL || `${window.location.origin}/api`;
 let editor;
 let currentProblemId = null;
 
