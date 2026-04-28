@@ -1152,15 +1152,15 @@ function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-4 md:py-6">
         <div
           className={cn(
-            "grid gap-4 md:gap-6",
+            "grid gap-4 md:gap-6 auto-rows-max md:auto-rows-auto",
             showSidebar ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1",
           )}
         >
-          {/* Sidebar: problems + description */}
+          {/* Sidebar: problems + description - Always at top on mobile */}
           <AnimatePresence mode="wait">
             {showSidebar && (
               <motion.aside
-                className="space-y-4 order-1 md:col-span-1"
+                className="space-y-4 col-span-1 md:col-span-1 row-start-1 md:row-start-auto"
                 initial={{ opacity: 0, width: 0 }}
                 animate={{ opacity: 1, width: "auto" }}
                 exit={{ opacity: 0, width: 0 }}
@@ -1173,7 +1173,7 @@ function App() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <ScrollArea className="h-[150px] sm:h-[180px] md:h-[220px] lg:h-[300px]">
+                    <ScrollArea className="h-[120px] sm:h-[150px] md:h-[220px] lg:h-[300px]">
                       <motion.div
                         className="space-y-1 pr-2"
                         variants={staggerContainer}
@@ -1268,8 +1268,8 @@ function App() {
           {/* Editor + Verdict */}
           <motion.div
             className={cn(
-              "space-y-4 order-2 md:order-2",
-              showSidebar ? "md:col-span-2" : "col-span-1",
+              "space-y-4 col-span-1",
+              showSidebar ? "md:col-span-2 md:row-start-1" : "col-span-1",
             )}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -1322,9 +1322,9 @@ function App() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="rounded-lg border border-border overflow-hidden min-h-[250px] sm:min-h-[280px] md:min-h-[320px]">
+                <div className="rounded-lg border border-border overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[320px]">
                   <Editor
-                    height="250px"
+                    height="200px"
                     defaultLanguage="cpp"
                     value={code}
                     onChange={(v) => setCode(v ?? "")}
