@@ -1153,14 +1153,14 @@ function App() {
         <div
           className={cn(
             "grid gap-4 md:gap-6",
-            showSidebar ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1",
+            showSidebar ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1",
           )}
         >
           {/* Sidebar: problems + description */}
           <AnimatePresence mode="wait">
             {showSidebar && (
               <motion.aside
-                className="space-y-4 order-2 lg:order-1"
+                className="space-y-4 order-1 md:col-span-1"
                 initial={{ opacity: 0, width: 0 }}
                 animate={{ opacity: 1, width: "auto" }}
                 exit={{ opacity: 0, width: 0 }}
@@ -1173,7 +1173,7 @@ function App() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <ScrollArea className="h-[180px] md:h-[220px]">
+                    <ScrollArea className="h-[150px] sm:h-[180px] md:h-[220px] lg:h-[300px]">
                       <motion.div
                         className="space-y-1 pr-2"
                         variants={staggerContainer}
@@ -1268,8 +1268,8 @@ function App() {
           {/* Editor + Verdict */}
           <motion.div
             className={cn(
-              "space-y-4 order-1 lg:order-2",
-              showSidebar ? "lg:col-span-2" : "col-span-1",
+              "space-y-4 order-2 md:order-2",
+              showSidebar ? "md:col-span-2" : "col-span-1",
             )}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -1322,9 +1322,9 @@ function App() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="rounded-lg border border-border overflow-hidden min-h-[280px] md:min-h-[320px]">
+                <div className="rounded-lg border border-border overflow-hidden min-h-[250px] sm:min-h-[280px] md:min-h-[320px]">
                   <Editor
-                    height="280px"
+                    height="250px"
                     defaultLanguage="cpp"
                     value={code}
                     onChange={(v) => setCode(v ?? "")}
