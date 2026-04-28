@@ -59,6 +59,19 @@ app.get('/api/problems', (req, res) => {
   }
 });
 
+// Compatibilitate: permite și accesul direct la /problems
+app.get('/problems', (req, res) => {
+  try {
+    if (!problemsCache) {
+      loadProblemsCache();
+    }
+    res.json(problemsCache || []);
+  } catch (err) {
+    console.error('Eroare la încărcarea problemelor:', err);
+    res.status(500).json({ error: 'Eroare la încărcarea problemelor' });
+  }
+});
+
 // Trimite soluție
 app.post('/api/submit', async (req, res) => {
   const { problemId, code } = req.body;
