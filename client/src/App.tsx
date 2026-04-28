@@ -1152,7 +1152,7 @@ function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-4 md:py-6">
         <div
           className={cn(
-            "grid gap-4 md:gap-6 auto-rows-max md:auto-rows-auto",
+            "grid gap-4 md:gap-6",
             showSidebar ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1",
           )}
         >
@@ -1160,7 +1160,7 @@ function App() {
           <AnimatePresence mode="wait">
             {showSidebar && (
               <motion.aside
-                className="space-y-4 col-span-1 md:col-span-1 row-start-1 md:row-start-auto"
+                className="space-y-4 col-span-1 row-start-1 md:row-start-auto md:col-start-1 md:col-span-1"
                 initial={{ opacity: 0, width: 0 }}
                 animate={{ opacity: 1, width: "auto" }}
                 exit={{ opacity: 0, width: 0 }}
@@ -1268,8 +1268,8 @@ function App() {
           {/* Editor + Verdict */}
           <motion.div
             className={cn(
-              "space-y-4 col-span-1",
-              showSidebar ? "md:col-span-2 md:row-start-1" : "col-span-1",
+              "space-y-4 col-span-1 row-start-2 md:row-start-auto",
+              showSidebar ? "md:col-start-2 md:col-span-2" : "col-span-1",
             )}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
