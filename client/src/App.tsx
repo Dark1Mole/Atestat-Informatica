@@ -112,7 +112,8 @@ function App() {
 
   // Saved solutions state
   const [savedSolutions, setSavedSolutions] = useState<SavedSolutions>({});
-  const [defaultSavedSolutions, setDefaultSavedSolutions] = useState<DefaultSavedSolutions>({});
+  const [defaultSavedSolutions, setDefaultSavedSolutions] =
+    useState<DefaultSavedSolutions>({});
   const [showSaves, setShowSaves] = useState(false);
   const [saveName, setSaveName] = useState("");
 
