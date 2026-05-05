@@ -84,6 +84,7 @@ type SavedSolution = {
 };
 
 type SavedSolutions = Record<number, SavedSolution[]>;
+type DefaultSavedSolutions = Record<string, SavedSolution[]>;
 
 const MAX_SAVES_PER_PROBLEM = 5;
 
@@ -111,6 +112,7 @@ function App() {
 
   // Saved solutions state
   const [savedSolutions, setSavedSolutions] = useState<SavedSolutions>({});
+  const [defaultSavedSolutions, setDefaultSavedSolutions] = useState<DefaultSavedSolutions>({});
   const [showSaves, setShowSaves] = useState(false);
   const [saveName, setSaveName] = useState("");
 
@@ -144,25 +146,54 @@ function App() {
     }
   }, []);
 
-  // Load saved solutions from localStorage
+  // Load default saved solutions from backend
+  useEffect(() => {
+    const loadDefaultSavedSolutions = async () => {
+      try {
+        const res = await fetch(`${API}/default-saves`);
+        const data = (await res.json()) as DefaultSavedSolutions;
+        setDefaultSavedSolutions(data || {});
+      } catch {
+        setDefaultSavedSolutions({});
+      }
+    };
+
+    loadDefaultSavedSolutions();
+  }, []);
+
+  // Load saved solutions from localStorage and merge with backend defaults
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem("miniPbinfo.savedSolutions");
-      if (raw) {
-        const parsed = JSON.parse(raw) as SavedSolutions;
-        setSavedSolutions(parsed);
-      }
+      const parsed = raw ? (JSON.parse(raw) as SavedSolutions) : {};
+      const merged: SavedSolutions = { ...parsed };
+
+      Object.entries(defaultSavedSolutions).forEach(([problemId, saves]) => {
+        const id = Number(problemId);
+        if (!Number.isNaN(id) && !merged[id]) {
+          merged[id] = saves;
+        }
+      });
+
+      setSavedSolutions(merged);
     } catch {
-      // ignore
+      const fallback: SavedSolutions = {};
+      Object.entries(defaultSavedSolutions).forEach(([problemId, saves]) => {
+        const id = Number(problemId);
+        if (!Number.isNaN(id)) {
+          fallback[id] = saves;
+        }
+      });
+      setSavedSolutions(fallback);
     }
-  }, []);
+  }, [defaultSavedSolutions]);
 
   // Save solutions to localStorage
   useEffect(() => {
     try {
       window.localStorage.setItem(
         "miniPbinfo.savedSolutions",
-        JSON.stringify(savedSolutions)
+        JSON.stringify(savedSolutions),
       );
     } catch {
       // ignore
@@ -173,7 +204,7 @@ function App() {
     try {
       window.localStorage.setItem(
         "miniPbinfo.attempts",
-        JSON.stringify(attempts)
+        JSON.stringify(attempts),
       );
     } catch {
       // ignore
@@ -201,7 +232,7 @@ function App() {
       let initialId: number | null = null;
       try {
         const stored = window.localStorage.getItem(
-          "miniPbinfo.selectedProblemId"
+          "miniPbinfo.selectedProblemId",
         );
         if (stored) {
           const parsed = Number.parseInt(stored, 10);
@@ -224,7 +255,7 @@ function App() {
     try {
       window.localStorage.setItem(
         "miniPbinfo.selectedProblemId",
-        String(selectedId)
+        String(selectedId),
       );
     } catch {
       // ignore
@@ -235,7 +266,7 @@ function App() {
     if (selectedId == null) return;
     try {
       const stored = window.localStorage.getItem(
-        `miniPbinfo.code.${selectedId}`
+        `miniPbinfo.code.${selectedId}`,
       );
       if (stored != null) {
         setCode(stored);
@@ -261,7 +292,7 @@ function App() {
     if (selectedId == null) return;
     try {
       const stored = window.localStorage.getItem(
-        `miniPbinfo.input.${selectedId}`
+        `miniPbinfo.input.${selectedId}`,
       );
       if (stored != null) {
         setCustomInput(stored);
@@ -279,7 +310,7 @@ function App() {
     try {
       window.localStorage.setItem(
         `miniPbinfo.input.${selectedId}`,
-        customInput
+        customInput,
       );
     } catch {
       // ignore
@@ -289,9 +320,9 @@ function App() {
   const currentProblem = useMemo(
     () =>
       selectedId != null
-        ? problems.find((p) => p.id === selectedId) ?? null
+        ? (problems.find((p) => p.id === selectedId) ?? null)
         : null,
-    [problems, selectedId]
+    [problems, selectedId],
   );
 
   const groupedProblems = useMemo(() => {
@@ -328,7 +359,7 @@ function App() {
 
     if (currentSaves.length >= MAX_SAVES_PER_PROBLEM) {
       alert(
-        `Maxim ${MAX_SAVES_PER_PROBLEM} salvari per problema. Sterge una pentru a salva alta.`
+        `Maxim ${MAX_SAVES_PER_PROBLEM} salvari per problema. Sterge una pentru a salva alta.`,
       );
       return;
     }
@@ -957,7 +988,7 @@ function App() {
         documentation: "Coadă cu priorități (heap)",
       },
     ],
-    []
+    [],
   );
 
   const registerCppCompletions = useCallback(
@@ -973,7 +1004,7 @@ function App() {
       const provider = monaco.languages.registerCompletionItemProvider("cpp", {
         provideCompletionItems: (
           model: editor.ITextModel,
-          position: { lineNumber: number; column: number }
+          position: { lineNumber: number; column: number },
         ) => {
           const word = model.getWordUntilPosition(position);
           const range = {
@@ -998,7 +1029,7 @@ function App() {
 
       completionProviderRef.current = provider;
     },
-    [intellisenseEnabled, cppSuggestions]
+    [intellisenseEnabled, cppSuggestions],
   );
 
   // Toggle IntelliSense
@@ -1029,7 +1060,7 @@ function App() {
       monacoRef.current = monaco;
       registerCppCompletions(monaco);
     },
-    [registerCppCompletions]
+    [registerCppCompletions],
   );
 
   const currentAttempts =
@@ -1041,7 +1072,7 @@ function App() {
     currentProblem && Array.isArray((currentProblem as any).tips)
       ? Math.min(
           ((currentProblem as any).tips as string[]).length,
-          currentAttempts.wrong
+          currentAttempts.wrong,
         )
       : 0;
 
@@ -1154,7 +1185,7 @@ function App() {
         <div
           className={cn(
             "grid gap-4 md:gap-6",
-            showSidebar ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1"
+            showSidebar ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1",
           )}
         >
           {/* Sidebar: problems + description - Always at top on mobile */}
@@ -1203,7 +1234,7 @@ function App() {
                                   "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                                   selectedId === p.id
                                     ? "bg-primary/20 text-primary font-medium"
-                                    : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                                    : "text-muted-foreground hover:bg-accent hover:text-foreground",
                                 )}
                               >
                                 #{p.id} {p.title}
@@ -1269,14 +1300,14 @@ function App() {
           {/* Editor + Verdict */}
           <motion.div
             className={cn(
-              "space-y-4 col-span-1 row-start-2 md:row-start-auto",
-              showSidebar ? "md:col-start-2 md:col-span-2" : "col-span-1"
+              "space-y-4 col-span-1 row-start-2 md:row-start-auto flex flex-col min-h-0",
+              showSidebar ? "md:col-start-2 md:col-span-2" : "col-span-1",
             )}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <Card>
+            <Card className="flex flex-col min-h-0">
               <CardHeader className="pb-2 flex flex-row items-center justify-between gap-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
                   Editor C++
@@ -1322,10 +1353,10 @@ function App() {
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent className="pt-0">
-                <div className="w-full rounded-lg border border-border overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[320px]">
+              <CardContent className="pt-0 flex flex-1 min-h-0 flex-col">
+                <div className="w-full flex-1 min-h-0 rounded-lg border border-border overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[320px]">
                   <Editor
-                    height="full"
+                    height="100%"
                     width="100%"
                     defaultLanguage="cpp"
                     value={code}
@@ -1571,7 +1602,7 @@ function App() {
                       verdict.verdict?.toLowerCase().includes("time") &&
                         "border-amber-500/50",
                       verdict.verdict?.toLowerCase().includes("compile") &&
-                        "border-violet-500/50"
+                        "border-violet-500/50",
                     )}
                   >
                     <CardHeader className="pb-2">
@@ -1712,7 +1743,7 @@ function App() {
                                   </ReactMarkdown>
                                 </div>
                               </motion.div>
-                            )
+                            ),
                           )}
                         </motion.div>
                       </CardContent>

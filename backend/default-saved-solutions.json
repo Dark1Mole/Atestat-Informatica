@@ -1,0 +1,42 @@
+{
+  "1": [
+    {
+      "id": "default-1",
+      "name": "Rezolvare implicita",
+      "code": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s[255], rez[255];\n    int n, i, k;\n\n    cin >> s;\n    n = strlen(s);\n    k = 0;\n\n    for (i = 0; i < n; i++) {\n        if (s[i] < 'a' || s[i] > 'z') {\n            rez[k] = s[i];\n            k++;\n        }\n    }\n    rez[k] = '\\0';\n\n    if (k == 0)\n        cout << \"CUVANT VID\";\n    else\n        cout << rez;\n\n    return 0;\n}",
+      "timestamp": 0
+    }
+  ],
+  "2": [
+    {
+      "id": "default-2",
+      "name": "Rezolvare implicita",
+      "code": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s[255];\n    int n, i;\n\n    cin.getline(s, 255);\n    n = strlen(s);\n\n    for (i = 0; i < n; i++) {\n        if (i == 0 && s[i] >= 'a' && s[i] <= 'z') {\n            s[i] = s[i] - 32;\n        } else if (s[i] == ' ' && i + 1 < n) {\n            if (s[i+1] >= 'a' && s[i+1] <= 'z') {\n                s[i+1] = s[i+1] - 32;\n            }\n        }\n    }\n\n    cout << s;\n\n    return 0;\n}",
+      "timestamp": 0
+    }
+  ],
+  "3": [
+    {
+      "id": "default-3",
+      "name": "Rezolvare implicita",
+      "code": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s[255];\n    int n, i;\n    char ultima = '\\0';\n    char vocale[] = \"aeiouAEIOU\";\n\n    cin.getline(s, 255);\n    n = strlen(s);\n\n    for (i = 0; i < n; i++) {\n        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {\n            int eVocala = 0;\n            int j;\n            for (j = 0; j < 10; j++) {\n                if (s[i] == vocale[j]) {\n                    eVocala = 1;\n                    break;\n                }\n            }\n            if (eVocala == 0) {\n                ultima = s[i];\n            }\n        }\n    }\n\n    if (ultima != '\\0')\n        cout << ultima;\n\n    return 0;\n}",
+      "timestamp": 0
+    }
+  ],
+  "4": [
+    {
+      "id": "default-4",
+      "name": "Rezolvare implicita",
+      "code": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s[255];\n    int n, i;\n\n    cin >> s;\n    n = strlen(s);\n\n    for (i = 0; i < n - 1; i++) {\n        if (s[i] >= 'a' && s[i] <= 'z' && s[i] == s[i+1]) {\n            cout << s[i] << s[i+1] << endl;\n        }\n    }\n\n    return 0;\n}",
+      "timestamp": 0
+    }
+  ],
+  "5": [
+    {
+      "id": "default-5",
+      "name": "Rezolvare implicita",
+      "code": "#include <iostream>\n#include <cstring>\nusing namespace std;\n\nint main() {\n    char s1[255], s2[255];\n    int n1, n2, i, j, k;\n    char sufix[255];\n\n    cin >> s1 >> s2;\n    n1 = strlen(s1);\n    n2 = strlen(s2);\n\n    i = n1 - 1;\n    j = n2 - 1;\n    k = 0;\n\n    while (i >= 0 && j >= 0 && s1[i] == s2[j]) {\n        i--;\n        j--;\n        k++;\n    }\n\n    if (k == 0) {\n        cout << \"NU EXISTA\";\n    } else {\n        int start = n1 - k;\n        int p;\n        for (p = 0; p < k; p++) {\n            sufix[p] = s1[start + p];\n        }\n        sufix[k] = '\\0';\n        cout << sufix;\n    }\n\n    return 0;\n}",
+      "timestamp": 0
+    }
+  ]
+}

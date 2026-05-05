@@ -12,6 +12,7 @@ const frontendFallback = path.join(__dirname, '../frontend');
 const staticDir = fs.existsSync(clientDist) ? clientDist : frontendFallback;
 
 let problemsCache = null;
+let defaultSavedSolutionsCache = null;
 
 function loadProblemsCache() {
   const problemsDir = path.join(__dirname, 'problems');
@@ -24,6 +25,16 @@ function loadProblemsCache() {
     const data = JSON.parse(fs.readFileSync(path.join(problemsDir, dir, 'problem.json'), 'utf8'));
     return data;
   }).sort((a, b) => a.id - b.id);
+}
+
+function loadDefaultSavedSolutionsCache() {
+  const filePath = path.join(__dirname, 'default-saved-solutions.json');
+  if (!fs.existsSync(filePath)) {
+    defaultSavedSolutionsCache = {};
+    return;
+  }
+
+  defaultSavedSolutionsCache = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 function logSubmission(problemId, result) {
@@ -69,6 +80,18 @@ app.get('/problems', (req, res) => {
   } catch (err) {
     console.error('Eroare la încărcarea problemelor:', err);
     res.status(500).json({ error: 'Eroare la încărcarea problemelor' });
+  }
+});
+
+app.get('/api/default-saves', (req, res) => {
+  try {
+    if (!defaultSavedSolutionsCache) {
+      loadDefaultSavedSolutionsCache();
+    }
+    res.json(defaultSavedSolutionsCache || {});
+  } catch (err) {
+    console.error('Eroare la incarcarea salvarilor implicite:', err);
+    res.status(500).json({ error: 'Eroare la incarcarea salvarilor implicite' });
   }
 });
 
