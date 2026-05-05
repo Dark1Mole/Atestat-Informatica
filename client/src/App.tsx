@@ -175,7 +175,7 @@ function App() {
           merged[id] = saves;
         }
       });
-
+      
       setSavedSolutions(merged);
     } catch {
       const fallback: SavedSolutions = {};
