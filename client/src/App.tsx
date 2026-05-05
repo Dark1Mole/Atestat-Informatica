@@ -92,9 +92,7 @@ const DEFAULT_CODE = `#include <iostream>
 using namespace std;
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-    cout << a + b;
+
     return 0;
 }
 `;
@@ -171,7 +169,9 @@ function App() {
 
       Object.entries(defaultSavedSolutions).forEach(([problemId, saves]) => {
         const id = Number(problemId);
-        if (!Number.isNaN(id) && !merged[id]) {
+        const existing = merged[id];
+        const isEmptyArray = Array.isArray(existing) && existing.length === 0;
+        if (!Number.isNaN(id) && (!existing || isEmptyArray)) {
           merged[id] = saves;
         }
       });
