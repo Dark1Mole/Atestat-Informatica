@@ -19,9 +19,9 @@ Mini-pbinfo is a small online judge for C++ practice problems. It loads a list o
 2. The user selects a problem and reads the statement.
 3. The user writes C++ code in the editor.
 4. The code can be:
-    - submitted to the judge for full evaluation;
-    - run with custom input for quick checking;
-    - saved locally under a custom name.
+   - submitted to the judge for full evaluation;
+   - run with custom input for quick checking;
+   - saved locally under a custom name.
 5. The backend compiles and runs the code with `g++`.
 6. The judge compares the program output with the expected outputs from the test files.
 
@@ -87,11 +87,11 @@ g++ -std=c++17 -O2
 5. Runs the compiled binary against each test input.
 6. Stops on the first failing test.
 7. Returns one of the following verdicts:
-    - Accepted
-    - Wrong Answer
-    - Time Limit Exceeded
-    - Compile Error
-    - Internal Error
+   - Accepted
+   - Wrong Answer
+   - Time Limit Exceeded
+   - Compile Error
+   - Internal Error
 
 Output is normalized before comparison, so `\r\n` vs `\n` differences do not matter.
 
@@ -214,13 +214,13 @@ Minimal `problem.json` shape:
 
 ```json
 {
-   "id": 1,
-   "title": "Example",
-   "category": "Șiruri de caractere",
-   "timeLimit": 1000,
-   "testsCount": 5,
-   "description": "Problem statement in Markdown",
-   "tips": ["Hint 1", "Hint 2"]
+  "id": 1,
+  "title": "Example",
+  "category": "Șiruri de caractere",
+  "timeLimit": 1000,
+  "testsCount": 5,
+  "description": "Problem statement in Markdown",
+  "tips": ["Hint 1", "Hint 2"]
 }
 ```
 
