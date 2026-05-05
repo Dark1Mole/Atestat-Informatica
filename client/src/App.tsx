@@ -41,6 +41,12 @@ const listItem = {
 
 const API = (import.meta.env.VITE_API_URL ?? "/api").replace(/\/$/, "");
 
+const buildApiUrl = (endpoint: string) => {
+  const ep = endpoint.replace(/^\//, "");
+  if (API === "/api" || API.endsWith("/api")) return `${API}/${ep}`;
+  return `${API}/api/${ep}`;
+};
+
 type Problem = {
   id: number;
   title: string;
@@ -149,7 +155,7 @@ function App() {
   useEffect(() => {
     const loadDefaultSavedSolutions = async () => {
       try {
-        const res = await fetch(`${API}/default-saves`);
+        const res = await fetch(buildApiUrl('default-saves'));
         const data = (await res.json()) as DefaultSavedSolutions;
         setDefaultSavedSolutions(data || {});
       } catch {
@@ -214,7 +220,7 @@ function App() {
 
   const loadProblems = useCallback(async () => {
     try {
-      const res = await fetch(`${API}/problems`);
+      const res = await fetch(buildApiUrl('problems'));
       const data = await res.json();
       setProblems(data);
     } catch {
@@ -410,7 +416,7 @@ function App() {
     setRunLoading(true);
     setCustomOutput(null);
     try {
-      const res = await fetch(`${API}/run`, {
+      const res = await fetch(buildApiUrl('run'), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code, input: customInput }),
@@ -1082,7 +1088,7 @@ function App() {
     setLoading(true);
     setVerdict({ verdict: "Running", passedTests: 0, totalTests: 0 });
     try {
-      const res = await fetch(`${API}/submit`, {
+      const res = await fetch(buildApiUrl('submit'), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ problemId: selectedId, code }),
