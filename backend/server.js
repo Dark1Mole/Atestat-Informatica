@@ -11,6 +11,21 @@ const clientDist = path.join(__dirname, '../client/dist');
 const frontendFallback = path.join(__dirname, '../frontend');
 const staticDir = fs.existsSync(clientDist) ? clientDist : frontendFallback;
 
+const allowedOrigins = new Set([
+  process.env.FRONTEND_ORIGIN,
+  process.env.CORS_ORIGIN,
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:4173',
+  'http://127.0.0.1:4173',
+]);
+
+function isAllowedOrigin(origin) {
+  if (!origin) return true;
+  if (allowedOrigins.has(origin)) return true;
+  return /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
+}
+
 let problemsCache = null;
 let defaultSavedSolutionsCache = null;
 
@@ -53,7 +68,18 @@ function logSubmission(problemId, result) {
   }
 }
 
-app.use(cors());
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (isAllowedOrigin(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error('CORS origin not allowed'));
+    },
+  }),
+);
 app.use(express.json({ limit: '1mb' }));
 app.use(express.static(staticDir));
 
@@ -67,6 +93,29 @@ app.get('/api/problems', (req, res) => {
   } catch (err) {
     console.error('Eroare la încărcarea problemelor:', err);
     res.status(500).json({ error: 'Eroare la încărcarea problemelor' });
+  }
+});
+
+app.get('/api/problems/:id', (req, res) => {
+  try {
+    if (!problemsCache) {
+      loadProblemsCache();
+    }
+
+    const problemId = Number.parseInt(req.params.id, 10);
+    if (!Number.isInteger(problemId)) {
+      return res.status(400).json({ error: 'problemId invalid' });
+    }
+
+    const problem = (problemsCache || []).find((p) => p.id === problemId);
+    if (!problem) {
+      return res.status(404).json({ error: 'Problema nu există' });
+    }
+
+    res.json(problem);
+  } catch (err) {
+    console.error('Eroare la încărcarea problemei:', err);
+    res.status(500).json({ error: 'Eroare la încărcarea problemei' });
   }
 });
 

@@ -32,6 +32,37 @@ function hasBannedInclude(code) {
   return BANNED_INCLUDES.some(name => lower.includes(`<${name.toLowerCase()}>`));
 }
 
+function killProcessTree(proc) {
+  if (!proc || proc.killed) return;
+
+  try {
+    if (process.platform === 'win32') {
+      spawn('taskkill', ['/pid', String(proc.pid), '/T', '/F'], {
+        stdio: 'ignore',
+        windowsHide: true
+      });
+      return;
+    }
+
+    if (proc.pid) {
+      try {
+        process.kill(-proc.pid, 'SIGKILL');
+      } catch {
+        proc.kill('SIGKILL');
+      }
+      return;
+    }
+  } catch {
+    // ignore cleanup failures
+  }
+
+  try {
+    proc.kill('SIGKILL');
+  } catch {
+    // ignore cleanup failures
+  }
+}
+
 function summarizeCompileError(stderr) {
   const text = stderr || '';
   if (text.includes('was not declared in this scope')) {
@@ -56,7 +87,12 @@ function summarizeCompileError(stderr) {
 }
 
 async function runJudge(problemId, code) {
-  const problemPath = path.join(PROBLEMS_DIR, String(problemId));
+  const parsedProblemId = Number.parseInt(String(problemId), 10);
+  if (!Number.isInteger(parsedProblemId) || String(parsedProblemId) !== String(problemId).trim()) {
+    return { verdict: 'Internal Error', message: 'ID problemă invalid' };
+  }
+
+  const problemPath = path.join(PROBLEMS_DIR, String(parsedProblemId));
   const problemJsonPath = path.join(problemPath, 'problem.json');
   const testsDir = path.join(problemPath, 'tests');
 
@@ -145,7 +181,8 @@ async function runJudge(problemId, code) {
         const result = await new Promise((resolve, reject) => {
           const proc = spawn(exePath, [], {
             cwd: TEMP_DIR,
-            stdio: ['pipe', 'pipe', 'pipe']
+            stdio: ['pipe', 'pipe', 'pipe'],
+            detached: process.platform !== 'win32'
           });
 
           let stdout = '';
@@ -168,7 +205,7 @@ async function runJudge(problemId, code) {
           proc.stdin.end();
 
           const timeout = setTimeout(() => {
-            proc.kill();
+            killProcessTree(proc);
             reject(new Error('Timeout'));
           }, timeLimit);
 
@@ -285,7 +322,8 @@ async function runWithCustomInput(code, input) {
     const result = await new Promise((resolve, reject) => {
       const proc = spawn(exePath, [], {
         cwd: TEMP_DIR,
-        stdio: ['pipe', 'pipe', 'pipe']
+        stdio: ['pipe', 'pipe', 'pipe'],
+        detached: process.platform !== 'win32'
       });
 
       let stdout = '';
@@ -294,7 +332,7 @@ async function runWithCustomInput(code, input) {
 
       const timer = setTimeout(() => {
         killed = true;
-        proc.kill('SIGKILL');
+        killProcessTree(proc);
       }, 5000); // 5 secunde timeout
 
       proc.stdout.on('data', chunk => {
